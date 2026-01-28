@@ -4,6 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
+import { CookieBanner } from "@/components/ui/CookieBanner";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Contact from "@/pages/contact";
@@ -31,8 +33,10 @@ function App() {
     <ThemeProvider defaultTheme="dark" attribute="class">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          <CustomCursor />
           <Router />
           <Toaster />
+          <CookieBanner />
         </TooltipProvider>
       </QueryClientProvider>
     </ThemeProvider>

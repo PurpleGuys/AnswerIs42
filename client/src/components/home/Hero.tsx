@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ROTATING_WORDS } from "@/lib/constants";
 import { Link } from "wouter";
 import { ArrowDown, ArrowRight } from "lucide-react";
@@ -8,6 +8,16 @@ import { Reveal } from "@/lib/animations";
 export function Hero() {
   const [index, setIndex] = useState(0);
   const prefersReducedMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+  
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     if (prefersReducedMotion) return;
@@ -24,15 +34,21 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
+    <section ref={sectionRef} className="min-h-screen flex flex-col justify-center pt-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
+      <motion.div 
+        className="absolute inset-0 pointer-events-none"
+        style={prefersReducedMotion ? {} : { y: backgroundY }}
+      >
         <div className="absolute top-1/4 right-0 w-px h-48 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
         <div className="absolute bottom-1/4 left-20 w-32 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute top-1/3 left-1/4 w-2 h-2 rounded-full bg-primary/30" />
         <div className="absolute bottom-1/3 right-1/4 w-1 h-1 rounded-full bg-white/20" />
-      </div>
+      </motion.div>
 
-      <div className="max-w-5xl z-10">
+      <motion.div 
+        className="max-w-5xl z-10"
+        style={prefersReducedMotion ? {} : { y: contentY, opacity }}
+      >
         <Reveal delay={0.1}>
           <p className="text-primary/80 text-sm font-medium tracking-[0.3em] uppercase mb-8" data-testid="text-hero-subtitle">
             Consulting IT Premium
@@ -93,7 +109,7 @@ export function Hero() {
             </button>
           </div>
         </Reveal>
-      </div>
+      </motion.div>
       
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-900/[0.02] rounded-full blur-3xl pointer-events-none" />
