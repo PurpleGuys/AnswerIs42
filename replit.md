@@ -103,37 +103,32 @@ Preferred communication style: Simple, everyday language.
 - **Structured Data**: JSON-LD for Organization, Service, HowTo, ContactPage schemas
 - **Legal pages**: noindex, follow (excluded from search but links followed)
 
-## Hetzner Deployment Architecture
+## Hetzner Webhosting Deployment
 
-### Docker Stack
-- **Dockerfile**: Multi-stage build (builder + production) with Node.js 20 Alpine
-- **docker-compose.yml**: Production orchestration (app, PostgreSQL, Nginx, Certbot)
-- **docker-compose.dev.yml**: Local development with PostgreSQL only
-- **docker-compose.initial.yml**: Initial deployment without SSL for certificate generation
+### Deployment Files
+- **ecosystem.config.cjs**: PM2 process manager configuration
+- **deploy.sh**: Automated deployment script (rsync + SSH)
+- **.htaccess**: Apache configuration (redirects, proxy, security headers, caching)
+- **DEPLOYMENT.md**: Complete deployment guide
 
-### Services
-- **app**: Node.js application on port 5000
-- **db**: PostgreSQL 16 Alpine with persistent volume
-- **nginx**: Reverse proxy with SSL termination, gzip, caching
-- **certbot**: Automatic SSL certificate renewal
+### Production Stack
+- **Runtime**: Node.js 20+ with PM2 process manager
+- **Web Server**: Apache or Nginx as reverse proxy
+- **Database**: PostgreSQL (local or external)
+- **SSL**: Hetzner SSL or Let's Encrypt
 
-### Security Features
-- SSL/TLS with Let's Encrypt auto-renewal
-- Security headers (HSTS, X-Frame-Options, X-Content-Type-Options)
-- Non-root container user
-- Health checks for all services
-- Rate limiting on API endpoints
-
-### Deployment Scripts
-- `scripts/deploy.sh`: Full deployment automation
-- `scripts/init-ssl.sh`: SSL certificate setup
-- `scripts/backup-db.sh`: Database backup with 30-day retention
+### Deployment Process
+1. Build locally: `npm run build`
+2. Upload files via SFTP or rsync
+3. Install dependencies: `npm ci --only=production`
+4. Start with PM2: `pm2 start ecosystem.config.cjs`
 
 ### Environment Variables
 - `DATABASE_URL`: PostgreSQL connection string
-- `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`: Database credentials
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`: Email configuration
 - `SMTP_FROM`, `CONTACT_EMAIL`: Contact form settings
+- `NODE_ENV`: production
+- `PORT`: 5000
 
 ### Health Endpoint
 - `GET /api/health`: Returns status, timestamp, and uptime for monitoring
