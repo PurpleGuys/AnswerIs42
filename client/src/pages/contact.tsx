@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GrainTexture } from "@/components/ui/GrainTexture";
@@ -74,34 +75,66 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <GrainTexture />
-      <Navbar />
-      
-      <main className="flex-grow pt-32 md:pt-40 px-6 relative">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 right-10 w-px h-48 bg-gradient-to-b from-primary/20 to-transparent" />
-          <div className="absolute bottom-1/3 left-10 w-24 h-px bg-gradient-to-r from-white/10 to-transparent" />
-        </div>
+    <>
+      <Helmet>
+        <title>Contact | Answer is 42 - Consulting IT Premium</title>
+        <meta name="description" content="Contactez Answer is 42 pour discuter de vos projets IT. Expertise en gestion de projet, développement Python, SQL, C# et transformation digitale. Réponse sous 48h." />
+        <meta name="keywords" content="contact consulting IT, devis projet IT, expert Python SQL, consultant IT Paris" />
+        <link rel="canonical" href="https://answeris42.fr/contact" />
         
-        <div className="max-w-7xl mx-auto relative">
-          <div className="mb-20 md:mb-24">
-            <Reveal>
-              <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6" data-testid="text-contact-label">
-                Contact
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 tracking-tight" data-testid="text-contact-title">
-                Parlons de votre projet.
-              </h1>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="text-lg md:text-xl text-white/50 font-light max-w-xl" data-testid="text-contact-subtitle">
-                Décrivez votre contexte. Réponse sous 24–48h ouvrées.
-              </p>
-            </Reveal>
+        <meta property="og:title" content="Contact | Answer is 42" />
+        <meta property="og:description" content="Contactez-nous pour discuter de vos projets IT et transformation digitale." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://answeris42.fr/contact" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact | Answer is 42" />
+        <meta name="twitter:description" content="Discutons de vos projets IT. Réponse garantie sous 48h." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Answer is 42",
+            "url": "https://answeris42.fr/contact",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Answer is 42",
+              "email": "contact@answeris42.com",
+              "areaServed": "France"
+            }
+          })}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-background flex flex-col">
+        <GrainTexture />
+        <Navbar />
+        
+        <main className="flex-grow pt-32 md:pt-40 px-6 relative">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-1/4 right-10 w-px h-48 bg-gradient-to-b from-primary/20 to-transparent" />
+            <div className="absolute bottom-1/3 left-10 w-24 h-px bg-gradient-to-r from-white/10 to-transparent" />
           </div>
+          
+          <div className="max-w-7xl mx-auto relative">
+            <div className="mb-20 md:mb-24">
+              <Reveal>
+                <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6" data-testid="text-contact-label">
+                  Contact
+                </p>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 tracking-tight" data-testid="text-contact-title">
+                  Parlons de votre projet.
+                </h1>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <p className="text-lg md:text-xl text-white/50 font-light max-w-xl" data-testid="text-contact-subtitle">
+                  Décrivez votre contexte. Réponse sous 24–48h ouvrées.
+                </p>
+              </Reveal>
+            </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 pb-20">
             <div>
@@ -258,9 +291,10 @@ export default function Contact() {
             </Reveal>
           </div>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
+        </main>
+        
+        <Footer />
+      </div>
+    </>
   );
 }

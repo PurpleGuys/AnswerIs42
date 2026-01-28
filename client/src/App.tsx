@@ -9,6 +9,8 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Contact from "@/pages/contact";
+import Services from "@/pages/services";
+import Approche from "@/pages/approche";
 import MentionsLegales from "@/pages/mentions-legales";
 import PolitiqueConfidentialite from "@/pages/politique-confidentialite";
 import CGU from "@/pages/cgu";
@@ -18,6 +20,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/services" component={Services} />
+      <Route path="/approche" component={Approche} />
       <Route path="/contact" component={Contact} />
       <Route path="/mentions-legales" component={MentionsLegales} />
       <Route path="/politique-confidentialite" component={PolitiqueConfidentialite} />

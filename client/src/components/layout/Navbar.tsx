@@ -70,18 +70,44 @@ export function Navbar() {
                   )}
                 </Link>
                 <Link 
-                  href="/#services" 
-                  className="text-sm font-medium text-white/50 hover:text-white transition-all duration-300"
+                  href="/services" 
+                  className={cn(
+                    "relative text-sm font-medium transition-all duration-300 hover:text-white",
+                    location === "/services" 
+                      ? "text-white" 
+                      : "text-white/50"
+                  )}
                   data-testid="link-services"
                 >
                   Services
+                  {location === "/services" && (
+                    <motion.span 
+                      layoutId="nav-indicator"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
+                      initial={false}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
                 </Link>
                 <Link 
-                  href="/#approche" 
-                  className="text-sm font-medium text-white/50 hover:text-white transition-all duration-300"
+                  href="/approche" 
+                  className={cn(
+                    "relative text-sm font-medium transition-all duration-300 hover:text-white",
+                    location === "/approche" 
+                      ? "text-white" 
+                      : "text-white/50"
+                  )}
                   data-testid="link-approche"
                 >
                   Approche
+                  {location === "/approche" && (
+                    <motion.span 
+                      layoutId="nav-indicator"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
+                      initial={false}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
                 </Link>
               </div>
               
@@ -147,17 +173,23 @@ export function Navbar() {
                   Accueil
                 </Link>
                 <Link 
-                  href="/#services" 
+                  href="/services" 
                   onClick={() => setIsOpen(false)}
-                  className="block py-4 text-4xl font-light tracking-tight text-white/60 hover:text-white transition-colors border-b border-white/5"
+                  className={cn(
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
+                    location === "/services" ? "text-primary" : "text-white/60 hover:text-white"
+                  )}
                   data-testid="link-mobile-services"
                 >
                   Services
                 </Link>
                 <Link 
-                  href="/#approche" 
+                  href="/approche" 
                   onClick={() => setIsOpen(false)}
-                  className="block py-4 text-4xl font-light tracking-tight text-white/60 hover:text-white transition-colors border-b border-white/5"
+                  className={cn(
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
+                    location === "/approche" ? "text-primary" : "text-white/60 hover:text-white"
+                  )}
                   data-testid="link-mobile-approche"
                 >
                   Approche
