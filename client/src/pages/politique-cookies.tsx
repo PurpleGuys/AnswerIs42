@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GrainTexture } from "@/components/ui/GrainTexture";
@@ -5,9 +6,24 @@ import { Reveal } from "@/lib/animations";
 
 export default function PolitiqueCookies() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <GrainTexture />
-      <Navbar />
+    <>
+      <Helmet>
+        <title>Politique des Cookies | Answer is 42</title>
+        <meta name="description" content="Politique des cookies et gestion de vos préférences - Answer is 42, consulting IT premium." />
+        <link rel="canonical" href="https://answeris42.fr/politique-cookies" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="Politique des Cookies | Answer is 42" />
+        <meta property="og:description" content="Politique des cookies - Answer is 42." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://answeris42.fr/politique-cookies" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Politique des Cookies | Answer is 42" />
+        <meta name="twitter:description" content="Politique des cookies - Answer is 42." />
+      </Helmet>
+      
+      <div className="min-h-screen bg-background flex flex-col">
+        <GrainTexture />
+        <Navbar />
       
       <main className="flex-grow pt-32 md:pt-40 px-6 pb-20">
         <div className="max-w-4xl mx-auto">
@@ -235,9 +251,10 @@ export default function PolitiqueCookies() {
             </Reveal>
           </div>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
+        </main>
+        
+        <Footer />
+      </div>
+    </>
   );
 }

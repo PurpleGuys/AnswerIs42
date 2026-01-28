@@ -2,7 +2,16 @@
 
 ## Overview
 
-A premium IT consulting website for "Answer is 42", a boutique firm specializing in project management, governance, and IT delivery. The site features a luxury dark-themed design with violet accents, built as a full-stack application with React frontend and Express backend.
+A premium IT consulting website for "Answer is 42", a boutique firm specializing in project management, governance, and IT delivery. The site features a luxury dark-themed design with violet accents (#7C3AED), built as a full-stack application with React frontend and Express backend.
+
+## Recent Changes (January 2026)
+
+- **Services Page**: Dedicated page with 8 service cards (SQL, Python, C#, Automation, Cloud, Security, BI, Project Management)
+- **Approche Page**: Methodology timeline with 4 phases and values section
+- **SEO Complete**: All pages have Helmet meta tags (title, description, OG, Twitter Cards, canonical)
+- **Legal Pages**: French RGPD compliance (Mentions légales, Confidentialité, CGU, Cookies) with noindex
+- **Premium UX**: Cookie consent banner, custom violet cursor, parallax effects, scroll animations
+- **Production Ready**: robots.txt, sitemap.xml with all 8 pages, structured data JSON-LD
 
 ## User Preferences
 
@@ -55,3 +64,22 @@ Preferred communication style: Simple, everyday language.
 ### Development Tools
 - **Replit Plugins**: Cartographer, dev banner, and runtime error overlay for Replit environment
 - **Meta Images**: Custom Vite plugin updates OpenGraph images with deployment URL
+
+## Site Pages
+
+1. **Home (/)** - Hero with rotating words, About, Services preview, Methodology timeline, Team section, Commitment
+2. **Services (/services)** - 8 detailed service cards with technologies and capabilities
+3. **Approche (/approche)** - 4-phase methodology, values, commitments, quote block
+4. **Contact (/contact)** - Contact form with validation, contact info cards
+5. **Mentions Légales (/mentions-legales)** - French legal requirements
+6. **Politique Confidentialité (/politique-confidentialite)** - RGPD privacy policy
+7. **CGU (/cgu)** - Terms of service
+8. **Politique Cookies (/politique-cookies)** - Cookie policy
+
+## SEO Configuration
+
+- **Domain**: answeris42.fr
+- **Sitemap**: /sitemap.xml with all 8 pages
+- **Robots**: /robots.txt allowing all crawlers
+- **Structured Data**: JSON-LD for Organization, Service, HowTo, ContactPage schemas
+- **Legal pages**: noindex, follow (excluded from search but links followed)

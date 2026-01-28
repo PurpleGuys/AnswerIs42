@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GrainTexture } from "@/components/ui/GrainTexture";
@@ -5,9 +6,24 @@ import { Reveal } from "@/lib/animations";
 
 export default function CGU() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <GrainTexture />
-      <Navbar />
+    <>
+      <Helmet>
+        <title>Conditions Générales d'Utilisation | Answer is 42</title>
+        <meta name="description" content="Conditions générales d'utilisation du site Answer is 42 - Cabinet de consulting IT premium." />
+        <link rel="canonical" href="https://answeris42.fr/cgu" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="CGU | Answer is 42" />
+        <meta property="og:description" content="Conditions générales d'utilisation - Answer is 42." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://answeris42.fr/cgu" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="CGU | Answer is 42" />
+        <meta name="twitter:description" content="Conditions générales d'utilisation - Answer is 42." />
+      </Helmet>
+      
+      <div className="min-h-screen bg-background flex flex-col">
+        <GrainTexture />
+        <Navbar />
       
       <main className="flex-grow pt-32 md:pt-40 px-6 pb-20">
         <div className="max-w-4xl mx-auto">
@@ -232,9 +248,10 @@ export default function CGU() {
             </Reveal>
           </div>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
+        </main>
+        
+        <Footer />
+      </div>
+    </>
   );
 }
