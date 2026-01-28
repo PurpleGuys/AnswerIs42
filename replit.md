@@ -102,3 +102,38 @@ Preferred communication style: Simple, everyday language.
 - **Robots**: /robots.txt allowing all crawlers
 - **Structured Data**: JSON-LD for Organization, Service, HowTo, ContactPage schemas
 - **Legal pages**: noindex, follow (excluded from search but links followed)
+
+## Hetzner Deployment Architecture
+
+### Docker Stack
+- **Dockerfile**: Multi-stage build (builder + production) with Node.js 20 Alpine
+- **docker-compose.yml**: Production orchestration (app, PostgreSQL, Nginx, Certbot)
+- **docker-compose.dev.yml**: Local development with PostgreSQL only
+- **docker-compose.initial.yml**: Initial deployment without SSL for certificate generation
+
+### Services
+- **app**: Node.js application on port 5000
+- **db**: PostgreSQL 16 Alpine with persistent volume
+- **nginx**: Reverse proxy with SSL termination, gzip, caching
+- **certbot**: Automatic SSL certificate renewal
+
+### Security Features
+- SSL/TLS with Let's Encrypt auto-renewal
+- Security headers (HSTS, X-Frame-Options, X-Content-Type-Options)
+- Non-root container user
+- Health checks for all services
+- Rate limiting on API endpoints
+
+### Deployment Scripts
+- `scripts/deploy.sh`: Full deployment automation
+- `scripts/init-ssl.sh`: SSL certificate setup
+- `scripts/backup-db.sh`: Database backup with 30-day retention
+
+### Environment Variables
+- `DATABASE_URL`: PostgreSQL connection string
+- `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`: Database credentials
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`: Email configuration
+- `SMTP_FROM`, `CONTACT_EMAIL`: Contact form settings
+
+### Health Endpoint
+- `GET /api/health`: Returns status, timestamp, and uptime for monitoring

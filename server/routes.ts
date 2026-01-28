@@ -47,6 +47,14 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  app.get("/api/health", (req, res) => {
+    res.status(200).json({ 
+      status: "healthy", 
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime()
+    });
+  });
+
   app.post("/api/contact", async (req, res) => {
     try {
       const ip = req.ip || req.socket.remoteAddress || "unknown";
@@ -99,7 +107,7 @@ ${message}
 
         await transporter.sendMail({
           from: process.env.SMTP_FROM,
-          to: "contact@answeris42.com",
+          to: process.env.CONTACT_EMAIL || "contact@answeris42.fr",
           subject: `Nouveau contact: ${name}`,
           text: emailContent,
         });
