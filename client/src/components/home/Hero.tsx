@@ -39,30 +39,31 @@ export function Hero() {
           </p>
         </Reveal>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-medium tracking-tighter text-white mb-10 leading-[0.95]">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-medium tracking-tighter text-white mb-10">
           <Reveal delay={0.2}>
-            <span className="block">Answer is</span>
+            <span className="block leading-tight">Answer is</span>
           </Reveal>
-          <div className="h-[1.2em] overflow-visible relative" data-testid="text-rotating-word">
+          <div className="relative py-2 -my-2" data-testid="text-rotating-word">
             {prefersReducedMotion ? (
-              <span className="block bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent pr-4">
+              <span className="block bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent leading-tight">
                 42
               </span>
             ) : (
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={ROTATING_WORDS[index]}
-                  initial={{ y: 80, opacity: 0, filter: "blur(12px)" }}
-                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: -80, opacity: 0, filter: "blur(12px)" }}
-                  transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-                  className="block absolute top-0 left-0 bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent whitespace-nowrap pr-4"
-                >
-                  {ROTATING_WORDS[index]}
-                </motion.span>
-              </AnimatePresence>
+              <div className="relative">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={ROTATING_WORDS[index]}
+                    initial={{ y: 60, opacity: 0, filter: "blur(8px)" }}
+                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                    exit={{ y: -60, opacity: 0, filter: "blur(8px)" }}
+                    transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+                    className="block bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent leading-tight"
+                  >
+                    {ROTATING_WORDS[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
             )}
-            <span className="opacity-0 pr-4">{ROTATING_WORDS[0]}</span>
           </div>
         </h1>
 
