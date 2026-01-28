@@ -34,14 +34,35 @@ export default function Contact() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    console.log(values);
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    toast.success("Message envoyé. Nous revenons vers vous rapidement.");
-    form.reset();
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Une erreur est survenue");
+      }
+
+      setIsSuccess(true);
+      
+      if (data.fallback) {
+        toast.success("Message reçu. Vous pouvez aussi nous écrire directement à contact@answeris42.com");
+      } else {
+        toast.success("Message envoyé. Nous revenons vers vous rapidement.");
+      }
+      
+      form.reset();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Une erreur est survenue");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -58,7 +79,6 @@ export default function Contact() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32">
-            {/* Left Column: Info */}
             <div className="space-y-12">
               <div>
                 <h3 className="text-sm font-medium text-white/40 uppercase tracking-widest mb-4">Email</h3>
@@ -77,7 +97,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right Column: Form */}
             <div>
               {isSuccess ? (
                 <div className="bg-primary/10 border border-primary/20 p-8 rounded-sm">
@@ -86,6 +105,7 @@ export default function Contact() {
                   <button 
                     onClick={() => setIsSuccess(false)}
                     className="mt-6 text-primary hover:text-primary/80 text-sm font-medium transition-colors"
+                    data-testid="button-send-another"
                   >
                     Envoyer un autre message
                   </button>
@@ -104,6 +124,7 @@ export default function Contact() {
                               placeholder="Votre nom" 
                               {...field} 
                               className="bg-transparent border-white/10 focus:border-primary/50 text-white placeholder:text-white/20 h-12 rounded-sm" 
+                              data-testid="input-name"
                             />
                           </FormControl>
                           <FormMessage />
@@ -122,6 +143,7 @@ export default function Contact() {
                               placeholder="votre@email.com" 
                               {...field} 
                               className="bg-transparent border-white/10 focus:border-primary/50 text-white placeholder:text-white/20 h-12 rounded-sm" 
+                              data-testid="input-email"
                             />
                           </FormControl>
                           <FormMessage />
@@ -140,6 +162,7 @@ export default function Contact() {
                               placeholder="Votre société" 
                               {...field} 
                               className="bg-transparent border-white/10 focus:border-primary/50 text-white placeholder:text-white/20 h-12 rounded-sm" 
+                              data-testid="input-company"
                             />
                           </FormControl>
                           <FormMessage />
@@ -158,6 +181,7 @@ export default function Contact() {
                               placeholder="Votre message..." 
                               {...field} 
                               className="bg-transparent border-white/10 focus:border-primary/50 text-white placeholder:text-white/20 min-h-[150px] resize-none rounded-sm" 
+                              data-testid="input-message"
                             />
                           </FormControl>
                           <FormMessage />
@@ -169,6 +193,7 @@ export default function Contact() {
                       type="submit" 
                       disabled={isSubmitting}
                       className="w-full bg-primary hover:bg-primary/90 text-white h-12 rounded-sm font-medium transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      data-testid="button-submit"
                     >
                       {isSubmitting ? (
                         <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Envoi...</>
