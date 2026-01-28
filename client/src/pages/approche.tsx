@@ -5,6 +5,12 @@ import { useRef } from "react";
 import { Reveal, StaggerContainer, StaggerItem } from "@/lib/animations";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingShapes } from "@/components/ui/FloatingShapes";
+import { TechGrid } from "@/components/ui/TechGrid";
+import { GrainTexture } from "@/components/ui/GrainTexture";
+import { PageTransition } from "@/components/ui/PageTransition";
+import { GlowCard } from "@/components/ui/GlowCard";
+import { SpotlightEffect } from "@/components/ui/SpotlightEffect";
 import { 
   Search, 
   Target, 
@@ -222,10 +228,15 @@ export default function Approche() {
       </Helmet>
 
       <div className="min-h-screen bg-[#07070A]">
+        <TechGrid />
+        <FloatingShapes />
+        <GrainTexture />
         <Navbar />
         
+        <PageTransition>
         <main>
-          <section ref={heroRef} className="pt-32 pb-20 px-6 relative overflow-hidden">
+          <SpotlightEffect>
+          <section ref={heroRef} className="pt-40 pb-24 px-6 relative overflow-hidden">
             <motion.div 
               className="absolute inset-0 pointer-events-none"
               style={prefersReducedMotion ? {} : { y: backgroundY }}
@@ -237,13 +248,13 @@ export default function Approche() {
             <div className="max-w-7xl mx-auto relative z-10">
               <div className="max-w-4xl">
                 <Reveal>
-                  <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6" data-testid="text-approach-label">
+                  <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8" data-testid="text-approach-label">
                     Notre philosophie
                   </p>
                 </Reveal>
                 
                 <Reveal delay={0.1}>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-tight tracking-tight mb-8" data-testid="text-approach-title">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-tight tracking-tight mb-10" data-testid="text-approach-title">
                     Une approche centrée sur{" "}
                     <span className="bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
                       vos résultats
@@ -252,7 +263,7 @@ export default function Approche() {
                 </Reveal>
                 
                 <Reveal delay={0.2}>
-                  <p className="text-lg md:text-xl text-white/50 font-light leading-relaxed max-w-3xl" data-testid="text-approach-description">
+                  <p className="text-xl md:text-2xl text-white/50 font-light leading-relaxed max-w-3xl tracking-wide" data-testid="text-approach-description">
                     Pas de méthodologie rigide. Pas de solutions préfabriquées. 
                     Chaque mission est unique, et notre approche s'adapte à votre contexte 
                     pour maximiser l'impact et minimiser les risques.
@@ -261,17 +272,18 @@ export default function Approche() {
               </div>
             </div>
           </section>
+          </SpotlightEffect>
 
-          <section className="py-12 px-6 border-y border-white/5">
+          <section className="py-16 px-6 border-y border-white/5">
             <div className="max-w-7xl mx-auto">
-              <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
                 {COMMITMENTS.map((commitment, i) => (
                   <StaggerItem key={i}>
                     <div className="text-center" data-testid={`stat-commitment-${i}`}>
-                      <p className="text-3xl md:text-4xl lg:text-5xl font-medium bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent mb-2">
+                      <p className="text-4xl md:text-5xl lg:text-6xl font-semibold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent mb-3">
                         {commitment.number}
                       </p>
-                      <p className="text-sm text-white/50">
+                      <p className="text-base text-white/50">
                         {commitment.label}
                       </p>
                     </div>
@@ -281,28 +293,28 @@ export default function Approche() {
             </div>
           </section>
 
-          <section className="py-24 px-6" aria-labelledby="methodology-heading">
+          <section className="py-32 px-6" aria-labelledby="methodology-heading">
             <div className="max-w-7xl mx-auto">
-              <div className="max-w-3xl mb-16">
+              <div className="max-w-3xl mb-20">
                 <Reveal>
-                  <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6">
+                  <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8">
                     Méthodologie
                   </p>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <h2 id="methodology-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight tracking-tight mb-6">
+                  <h2 id="methodology-heading" className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight mb-8">
                     4 phases pour transformer vos défis en succès
                   </h2>
                 </Reveal>
                 <Reveal delay={0.2}>
-                  <p className="text-lg text-white/50 font-light">
+                  <p className="text-xl text-white/50 font-light leading-relaxed">
                     Notre processus éprouvé garantit transparence, prévisibilité et résultats mesurables 
                     tout en restant flexible pour s'adapter à vos besoins spécifiques.
                   </p>
                 </Reveal>
               </div>
 
-              <div className="space-y-12">
+              <div className="space-y-16">
                 {METHODOLOGY_STEPS.map((step, i) => (
                   <MethodologyCard key={step.phase} step={step} index={i} />
                 ))}
@@ -310,40 +322,42 @@ export default function Approche() {
             </div>
           </section>
 
-          <section className="py-24 px-6 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" aria-labelledby="values-heading">
+          <section className="py-32 px-6 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" aria-labelledby="values-heading">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="text-center max-w-3xl mx-auto mb-20">
                 <Reveal>
-                  <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6">
+                  <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8">
                     Nos valeurs
                   </p>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <h2 id="values-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight tracking-tight mb-6">
+                  <h2 id="values-heading" className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight mb-8">
                     Ce qui guide chacune de nos actions
                   </h2>
                 </Reveal>
               </div>
 
-              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                 {VALUES.map((value, i) => {
                   const Icon = value.icon;
                   return (
                     <StaggerItem key={i}>
-                      <div 
-                        className="p-8 border border-white/5 hover:border-primary/20 rounded-sm transition-all group h-full"
-                        data-testid={`card-value-${i}`}
-                      >
-                        <div className="p-3 bg-primary/10 rounded-sm w-fit mb-6 group-hover:bg-primary/20 transition-colors">
-                          <Icon className="w-5 h-5 text-primary" />
+                      <GlowCard className="h-full">
+                        <div 
+                          className="p-10 border border-white/5 hover:border-primary/20 rounded-sm transition-all group h-full"
+                          data-testid={`card-value-${i}`}
+                        >
+                          <div className="p-4 bg-primary/10 rounded-sm w-fit mb-8 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                            <Icon className="w-6 h-6 text-primary" />
+                          </div>
+                          <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-primary transition-colors">
+                            {value.title}
+                          </h3>
+                          <p className="text-white/50 text-base leading-relaxed">
+                            {value.description}
+                          </p>
                         </div>
-                        <h3 className="text-lg font-medium text-white mb-3 group-hover:text-primary transition-colors">
-                          {value.title}
-                        </h3>
-                        <p className="text-white/50 text-sm leading-relaxed">
-                          {value.description}
-                        </p>
-                      </div>
+                      </GlowCard>
                     </StaggerItem>
                   );
                 })}
@@ -372,35 +386,37 @@ export default function Approche() {
             </div>
           </section>
 
-          <section className="py-24 px-6 border-t border-white/5">
+          <section className="py-32 px-6 border-t border-white/5">
             <div className="max-w-7xl mx-auto">
-              <div className="relative p-12 md:p-16 bg-gradient-to-br from-primary/10 via-purple-900/5 to-transparent border border-primary/20 rounded-sm overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative p-14 md:p-20 bg-gradient-to-br from-primary/10 via-purple-900/5 to-transparent border border-primary/20 rounded-sm overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
                 
-                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
                   <div className="text-center lg:text-left">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6">
                       Prêt à transformer votre IT ?
                     </h2>
-                    <p className="text-white/50 text-lg max-w-xl">
+                    <p className="text-white/50 text-xl max-w-xl leading-relaxed">
                       Discutons de vos enjeux. Premier échange sans engagement pour comprendre vos besoins.
                     </p>
                   </div>
                   
                   <Link 
                     href="/contact"
-                    className="group flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-sm font-medium transition-all whitespace-nowrap"
+                    className="group relative flex items-center gap-4 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-sm text-lg font-medium transition-all whitespace-nowrap overflow-hidden shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
                     data-testid="link-approach-contact"
                   >
-                    Planifier un échange
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                    <span className="relative">Planifier un échange</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative" />
                   </Link>
                 </div>
               </div>
             </div>
           </section>
         </main>
+        </PageTransition>
 
         <Footer />
       </div>

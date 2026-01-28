@@ -11,6 +11,9 @@ import { MethodologyTimeline } from "@/components/home/MethodologyTimeline";
 import { Team } from "@/components/home/Team";
 import { Commitment } from "@/components/home/Commitment";
 import { GrainTexture } from "@/components/ui/GrainTexture";
+import { FloatingShapes } from "@/components/ui/FloatingShapes";
+import { TechGrid } from "@/components/ui/TechGrid";
+import { PageTransition } from "@/components/ui/PageTransition";
 
 export default function Home() {
   return (
@@ -45,19 +48,23 @@ export default function Home() {
       </Helmet>
       
       <div className="min-h-screen bg-background">
+        <TechGrid />
+        <FloatingShapes />
         <GrainTexture />
         <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <TrustIndicators />
-          <Services />
-          <WhyUs />
-          <Approach />
-          <MethodologyTimeline />
-          <Team />
-          <Commitment />
-        </main>
+        <PageTransition>
+          <main>
+            <Hero />
+            <About />
+            <TrustIndicators />
+            <Services />
+            <WhyUs />
+            <Approach />
+            <MethodologyTimeline />
+            <Team />
+            <Commitment />
+          </main>
+        </PageTransition>
         <Footer />
       </div>
     </>

@@ -4,6 +4,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Reveal, StaggerContainer, StaggerItem } from "@/lib/animations";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingShapes } from "@/components/ui/FloatingShapes";
+import { TechGrid } from "@/components/ui/TechGrid";
+import { GrainTexture } from "@/components/ui/GrainTexture";
+import { PageTransition } from "@/components/ui/PageTransition";
+import { GlowCard } from "@/components/ui/GlowCard";
 import { 
   Database, 
   Code2, 
@@ -159,60 +164,60 @@ function ServiceCard({ service, index }: { service: typeof SERVICES[0]; index: n
       whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative"
+      className="group relative h-full"
       data-testid={`card-service-${service.id}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      <div className="relative p-8 md:p-10 border border-white/5 hover:border-white/10 rounded-sm transition-all duration-500 h-full">
-        <div className="flex items-start gap-6 mb-8">
-          <div className={`p-4 rounded-sm bg-gradient-to-br ${service.color} bg-opacity-10`}>
-            <Icon className="w-6 h-6 text-white" />
+      <GlowCard className="h-full border border-white/5 hover:border-primary/20">
+        <div className="p-8 md:p-10 h-full">
+          <div className="flex items-start gap-6 mb-8">
+            <div className={`p-4 rounded-sm bg-gradient-to-br ${service.color} bg-opacity-10 group-hover:scale-110 transition-transform duration-300`}>
+              <Icon className="w-6 h-6 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl md:text-2xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-primary/80 text-sm font-medium tracking-wide">
+                {service.subtitle}
+              </p>
+            </div>
           </div>
-          <div className="flex-1">
-            <h3 className="text-xl md:text-2xl font-medium text-white mb-2 group-hover:text-primary transition-colors">
-              {service.title}
-            </h3>
-            <p className="text-primary/80 text-sm font-medium tracking-wide">
-              {service.subtitle}
-            </p>
+
+          <p className="text-white/60 leading-relaxed mb-8 text-base">
+            {service.description}
+          </p>
+
+          <div className="mb-8">
+            <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Technologies</p>
+            <div className="flex flex-wrap gap-2">
+              {service.technologies.map((tech, i) => (
+                <span 
+                  key={i}
+                  className="px-3 py-1.5 text-xs font-medium text-white/70 bg-white/5 rounded-sm border border-white/5 hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all duration-300"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Expertises</p>
+            <ul className="space-y-3">
+              {service.capabilities.map((cap, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-white/50">
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>{cap}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${service.color} opacity-20 blur-2xl`} />
           </div>
         </div>
-
-        <p className="text-white/60 leading-relaxed mb-8">
-          {service.description}
-        </p>
-
-        <div className="mb-8">
-          <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Technologies</p>
-          <div className="flex flex-wrap gap-2">
-            {service.technologies.map((tech, i) => (
-              <span 
-                key={i}
-                className="px-3 py-1.5 text-xs font-medium text-white/70 bg-white/5 rounded-sm border border-white/5 hover:border-primary/30 hover:text-primary transition-colors"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Expertises</p>
-          <ul className="space-y-3">
-            {service.capabilities.map((cap, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-white/50">
-                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>{cap}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
-          <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${service.color} opacity-10 blur-2xl`} />
-        </div>
-      </div>
+      </GlowCard>
     </motion.article>
   );
 }
@@ -266,20 +271,24 @@ export default function Services() {
       </Helmet>
 
       <div className="min-h-screen bg-[#07070A]">
+        <TechGrid />
+        <FloatingShapes />
+        <GrainTexture />
         <Navbar />
         
+        <PageTransition>
         <main>
-          <section className="pt-32 pb-20 px-6">
+          <section className="pt-40 pb-24 px-6">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-4xl">
                 <Reveal>
-                  <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6" data-testid="text-services-label">
+                  <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8" data-testid="text-services-label">
                     Nos expertises
                   </p>
                 </Reveal>
                 
                 <Reveal delay={0.1}>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-tight tracking-tight mb-8" data-testid="text-services-title">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-tight tracking-tight mb-10" data-testid="text-services-title">
                     Des solutions technologiques{" "}
                     <span className="bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
                       sur mesure
@@ -288,7 +297,7 @@ export default function Services() {
                 </Reveal>
                 
                 <Reveal delay={0.2}>
-                  <p className="text-lg md:text-xl text-white/50 font-light leading-relaxed max-w-3xl" data-testid="text-services-description">
+                  <p className="text-xl md:text-2xl text-white/50 font-light leading-relaxed max-w-3xl tracking-wide" data-testid="text-services-description">
                     De l'architecture de données au déploiement cloud, nous maîtrisons l'ensemble 
                     de la chaîne technologique pour transformer vos défis en opportunités.
                   </p>
@@ -297,10 +306,10 @@ export default function Services() {
             </div>
           </section>
 
-          <section className="py-16 px-6" aria-labelledby="services-heading">
+          <section className="py-20 px-6" aria-labelledby="services-heading">
             <h2 id="services-heading" className="sr-only">Liste de nos services</h2>
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                 {SERVICES.map((service, i) => (
                   <ServiceCard key={service.id} service={service} index={i} />
                 ))}
@@ -308,39 +317,41 @@ export default function Services() {
             </div>
           </section>
 
-          <section className="py-24 px-6 border-t border-white/5">
+          <section className="py-32 px-6 border-t border-white/5">
             <div className="max-w-7xl mx-auto">
-              <div className="relative p-12 md:p-16 bg-gradient-to-br from-primary/10 via-purple-900/5 to-transparent border border-primary/20 rounded-sm overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative p-14 md:p-20 bg-gradient-to-br from-primary/10 via-purple-900/5 to-transparent border border-primary/20 rounded-sm overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
                 
-                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
                   <div className="text-center lg:text-left">
-                    <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-                      <Sparkles className="w-5 h-5 text-primary" />
-                      <span className="text-primary text-sm font-medium">Projet sur mesure</span>
+                    <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                      <Sparkles className="w-6 h-6 text-primary" />
+                      <span className="text-primary text-base font-medium tracking-wide">Projet sur mesure</span>
                     </div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6">
                       Vous avez un besoin spécifique ?
                     </h2>
-                    <p className="text-white/50 text-lg max-w-xl">
+                    <p className="text-white/50 text-xl max-w-xl leading-relaxed">
                       Discutons de votre projet. Notre expertise couvre bien plus que cette liste.
                     </p>
                   </div>
                   
                   <Link 
                     href="/contact"
-                    className="group flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-sm font-medium transition-all whitespace-nowrap"
+                    className="group relative flex items-center gap-4 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-sm text-lg font-medium transition-all whitespace-nowrap overflow-hidden shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
                     data-testid="link-services-contact"
                   >
-                    Démarrer un projet
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                    <span className="relative">Démarrer un projet</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative" />
                   </Link>
                 </div>
               </div>
             </div>
           </section>
         </main>
+        </PageTransition>
 
         <Footer />
       </div>

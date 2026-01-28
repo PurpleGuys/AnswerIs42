@@ -12,6 +12,25 @@ A premium IT consulting website for "Answer is 42", a boutique firm specializing
 - **Legal Pages**: French RGPD compliance (Mentions légales, Confidentialité, CGU, Cookies) with noindex
 - **Premium UX**: Cookie consent banner, custom violet cursor, parallax effects, scroll animations
 - **Production Ready**: robots.txt, sitemap.xml with all 8 pages, structured data JSON-LD
+- **Visual Enhancements**: Floating shapes, tech grid, particles, glow cards, spotlight effect, premium typography
+
+## Premium Visual Components
+
+### Background Effects
+- **FloatingShapes**: Animated geometric shapes (circles, squares, triangles) floating in background
+- **TechGrid**: Subtle grid pattern with violet accent lines
+- **GrainTexture**: Film grain overlay for premium feel
+- **ParticleConstellation**: Animated particle effect in hero section
+
+### Interactive Effects
+- **SpotlightEffect**: Mouse-following radial gradient light
+- **GlowCard**: Cards with violet glow on hover, animated borders, shimmer effect
+- **Button animations**: Shimmer sweep on hover, violet shadow glow, scale transforms
+
+### Typography & Spacing
+- **Gradient titles**: Key text with violet gradient (from-primary via-purple-400 to-primary)
+- **Premium sizing**: Titles at 6xl-8xl scale, generous padding (py-40, gap-20)
+- **PageTransition**: Smooth fade-in animations between page navigations
 
 ## User Preferences
 

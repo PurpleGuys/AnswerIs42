@@ -33,11 +33,12 @@ export function Commitment() {
                 <Reveal delay={0.3}>
                   <Link 
                     href="/contact" 
-                    className="group inline-flex items-center gap-3 bg-white text-background px-8 py-4 rounded-sm text-sm font-medium hover:bg-white/90 transition-colors"
+                    className="group relative inline-flex items-center gap-4 bg-white text-background px-10 py-5 rounded-sm text-base font-medium hover:bg-white/90 transition-all overflow-hidden shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20"
                     data-testid="button-commitment-contact"
                   >
-                    Discutons de votre projet
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                    <span className="relative">Discutons de votre projet</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative" />
                   </Link>
                 </Reveal>
               </div>
