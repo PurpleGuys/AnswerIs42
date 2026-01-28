@@ -1,0 +1,275 @@
+Prompt Replit — Version Ultra Premium (à copier-coller)
+
+Tu es un directeur artistique + expert Next.js / SEO / accessibilité. Crée un site vitrine ultra haut de gamme pour une société de consulting IT nommée “Answer is 42” (spécialiste gestion de projet informatique : cadrage, pilotage, delivery, gouvernance). Le site doit être minimaliste, très classe, très silencieux visuellement, sans effets inutiles. L’objectif : une présence web premium, crédible, “cabinet boutique”.
+
+Non-négociables
+
+Design luxe : beaucoup d’espace, alignements parfaits, typographie impeccable, micro-interactions discrètes.
+
+Couleurs : noir profond dominant + violet en accent (dégradé violet très subtil autorisé).
+
+Extrêmement responsive (mobile-first), sans scroll horizontal, sans surcharge.
+
+SEO impeccable (metas, OpenGraph, Twitter, canonical, sitemap, robots, JSON-LD).
+
+Accessibilité : contrastes, focus visibles, labels, navigation clavier.
+
+Performance : pas d’images lourdes, pas de libs inutiles.
+
+Stack imposée
+
+Next.js (App Router) + TypeScript + Tailwind CSS
+
+Structure claire : composants réutilisables, pages / et /contact, route API /api/contact.
+
+Direction artistique (très précise)
+Mood
+
+“Luxury tech / boutique firm” : sérieux, net, moderne, presque éditorial.
+Pas de “blabla marketing”, pas de longs paragraphes.
+
+Palette (exemples)
+
+Background : #07070A (noir très profond)
+
+Text : blanc cassé rgba(255,255,255,0.92) + secondaires 0.65
+
+Accent : violet #7C3AED + violet clair en hover
+
+Bordures : blanc à 0.10 d’opacité
+
+Ombres : très faibles, presque invisibles
+
+Typographie
+
+Police : Inter si possible sinon system UI.
+
+Titres : tracking légèrement resserré, très clean.
+
+Texte : taille confortable, line-height généreux.
+
+Style : aucune fioriture, aucune surcharge.
+
+UI
+
+Navbar sticky avec blur discret, bordure fine.
+
+Boutons : 1 bouton primaire (violet), 1 bouton secondaire ghost.
+
+Sections : peu nombreuses, très courtes, composées comme une page éditoriale.
+
+Animations : 150–250ms max, uniquement sur hover/focus + hero word rotation.
+
+Contenu (FR), ton premium, concis
+Pages
+
+/ Accueil
+
+/contact Contact
+
+Navbar
+
+Logo texte minimal : “Answer is 42”
+
+Liens : Accueil, Contact
+
+À droite : un CTA discret “Contact” (sur desktop), mais sans duplication lourde.
+
+Accueil (/) — Composition Ultra Premium
+HERO (signature)
+
+En haut, très respirant, avec une seule idée forte :
+
+Ligne principale :
+
+“Answer is” (blanc)
+
+mot dynamique à côté (accent violet / gradient subtil) qui rotate avec une transition élégante.
+
+Mots à faire tourner (ordre exact, ton premium) :
+
+“42”
+
+“clarity”
+
+“ownership”
+
+“delivery”
+
+“alignment”
+
+“outcomes”
+
+“trust”
+
+“focus”
+
+Le mot doit être discret, pas “gadget”, et respecter prefers-reduced-motion : si activé → afficher uniquement “42” (statique).
+
+Sous la ligne, une phrase unique (max 18 mots) :
+
+“Nous pilotons vos projets IT avec une exécution précise, une gouvernance nette, et des résultats mesurables.”
+
+Ensuite 2 CTA :
+
+Primaire : “Parler à un consultant” → /contact
+
+Secondaire ghost : “Notre approche” → scroll vers section suivante
+
+Section “Services” (3 items, ultra courts)
+
+Présenter comme une grille minimaliste (3 cartes fines, bordure 1px opacité faible).
+Chaque carte : titre + 1 phrase (max 12 mots).
+
+Cadrage
+
+“Objectifs, périmètre, risques, feuille de route.”
+
+Pilotage
+
+“Rituels, arbitrages, reporting, coordination des parties prenantes.”
+
+Delivery
+
+“Exécution, qualité, amélioration continue, mise sous contrôle.”
+
+Section “Approche” (une seule ligne + 4 points)
+
+Une ligne d’intro :
+
+“Une méthode sobre : comprendre vite, décider clair, livrer propre.”
+
+Puis 4 bullets max :
+
+“Clarté radicale sur les responsabilités.”
+
+“Décisions documentées, arbitrages assumés.”
+
+“Transparence sur risques, coûts, délais.”
+
+“Focus valeur : ce qui compte, au bon moment.”
+
+Section “Engagement” (ultra premium)
+
+Créer un bloc très simple, style “pacte” :
+
+Titre : “Notre engagement”
+
+3 micro-lignes (pas plus) :
+
+“Temps court, décisions nettes.”
+
+“Visibilité continue.”
+
+“Zéro bruit, que du delivery.”
+
+Footer
+
+“© [année] Answer is 42”
+
+“contact@answeris42.com
+”
+
+Lien LinkedIn (placeholder ok)
+
+Page Contact (/contact) — Luxe, simple
+
+Titre : “Contact”
+Sous-titre (1 phrase) :
+
+“Décrivez votre contexte. Réponse sous 24–48h ouvrées.”
+
+Deux colonnes sur desktop, une colonne sur mobile :
+
+Colonne gauche (Coordonnées)
+
+Email : contact@answeris42.com
+
+Disponibilité : “France / Remote”
+
+Note courte : “Premier échange sans engagement.”
+
+Colonne droite (Formulaire)
+Champs :
+
+Nom
+
+Email
+
+Société (optionnel)
+
+Message
+Bouton : “Envoyer”
+
+Après envoi :
+
+Succès : “Message envoyé. Nous revenons vers vous rapidement.”
+
+Erreur : message clair (pas technique)
+
+Accessibilité : labels + aria + focus ring propre.
+
+Formulaire — API + fallback (obligatoire)
+
+Créer /api/contact avec :
+
+Validation stricte (email, message non vide).
+
+Rate limit simple par IP (mémoire serveur) pour anti-spam.
+
+2 modes :
+
+Si env SMTP présentes → envoi email à contact@answeris42.com
+
+Sinon → retour OK + inciter à écrire directement via mailto.
+
+Env vars attendues :
+SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM
+
+Le formulaire côté client doit :
+
+Afficher un état “Envoi…” (discret)
+
+Désactiver le bouton durant l’envoi
+
+Gérer succès/erreur proprement
+
+SEO (niveau cabinet)
+
+Implémenter :
+
+Metadata Next.js : title/description par page
+
+Canonical URL
+
+OpenGraph + Twitter cards
+
+robots.txt (index autorisé)
+
+sitemap.xml (routes / + /contact)
+
+JSON-LD (Organization + ProfessionalService) :
+
+name: Answer is 42
+
+url: (utiliser NEXT_PUBLIC_SITE_URL)
+
+email: contact@answeris42.com
+
+sameAs: linkedin (placeholder ok)
+
+areaServed: FR / Europe (optionnel)
+
+Definition of Done (contrôle qualité)
+
+Mobile impeccable, typographie lisible, espaces parfaits.
+
+Aucun effet “cheap”, aucun composant superflu.
+
+Animation hero élégante et sobre.
+
+Lighthouse : bonnes pratiques SEO/accessibilité/perf (objectif élevé).
+
+Projet prêt à lancer (npm run dev), sans erreurs TypeScript.
+
+Génère tout le projet complet et assure-toi que ça compile.
