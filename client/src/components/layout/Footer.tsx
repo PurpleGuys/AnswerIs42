@@ -8,7 +8,7 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.02] to-transparent pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-2">
             <Reveal>
               <Link 
@@ -45,7 +45,7 @@ export function Footer() {
           
           <div>
             <Reveal>
-              <h4 className="text-xs font-medium text-white/40 uppercase tracking-[0.2em] mb-6">Navigation</h4>
+              <h4 className="text-xs font-medium text-white/40 uppercase tracking-[0.2em] mb-6" data-testid="text-footer-nav-title">Navigation</h4>
             </Reveal>
             <Reveal delay={0.1}>
               <ul className="space-y-4">
@@ -57,6 +57,36 @@ export function Footer() {
                 <li>
                   <Link href="/contact" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-contact">
                     Contact
+                  </Link>
+                </li>
+              </ul>
+            </Reveal>
+          </div>
+          
+          <div>
+            <Reveal>
+              <h4 className="text-xs font-medium text-white/40 uppercase tracking-[0.2em] mb-6" data-testid="text-footer-legal-title">Légal</h4>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <ul className="space-y-4">
+                <li>
+                  <Link href="/mentions-legales" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-mentions">
+                    Mentions légales
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/politique-confidentialite" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-confidentialite">
+                    Confidentialité
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cgu" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-cgu">
+                    CGU
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/politique-cookies" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-cookies">
+                    Cookies
                   </Link>
                 </li>
               </ul>

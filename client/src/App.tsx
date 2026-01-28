@@ -7,12 +7,20 @@ import { ThemeProvider } from "next-themes";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Contact from "@/pages/contact";
+import MentionsLegales from "@/pages/mentions-legales";
+import PolitiqueConfidentialite from "@/pages/politique-confidentialite";
+import CGU from "@/pages/cgu";
+import PolitiqueCookies from "@/pages/politique-cookies";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/contact" component={Contact} />
+      <Route path="/mentions-legales" component={MentionsLegales} />
+      <Route path="/politique-confidentialite" component={PolitiqueConfidentialite} />
+      <Route path="/cgu" component={CGU} />
+      <Route path="/politique-cookies" component={PolitiqueCookies} />
       <Route component={NotFound} />
     </Switch>
   );
