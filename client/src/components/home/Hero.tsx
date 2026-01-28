@@ -43,9 +43,9 @@ export function Hero() {
           <Reveal delay={0.2}>
             <span className="block">Answer is</span>
           </Reveal>
-          <div className="h-[1.05em] overflow-hidden relative" data-testid="text-rotating-word">
+          <div className="h-[1.2em] overflow-visible relative" data-testid="text-rotating-word">
             {prefersReducedMotion ? (
-              <span className="block bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent pr-4">
                 42
               </span>
             ) : (
@@ -56,13 +56,13 @@ export function Hero() {
                   animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                   exit={{ y: -80, opacity: 0, filter: "blur(12px)" }}
                   transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-                  className="block absolute top-0 left-0 bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent"
+                  className="block absolute top-0 left-0 bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent whitespace-nowrap pr-4"
                 >
                   {ROTATING_WORDS[index]}
                 </motion.span>
               </AnimatePresence>
             )}
-            <span className="opacity-0">{ROTATING_WORDS[0]}</span>
+            <span className="opacity-0 pr-4">{ROTATING_WORDS[0]}</span>
           </div>
         </h1>
 
