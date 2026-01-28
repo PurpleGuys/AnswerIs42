@@ -120,7 +120,7 @@ export default function Contact() {
         
         <PageTransition>
         <SpotlightEffect className="flex-grow">
-        <main className="flex-grow pt-40 md:pt-48 px-6 relative">
+        <main className="flex-grow pt-28 sm:pt-32 md:pt-40 px-4 sm:px-6 relative">
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute top-1/4 right-10 w-px h-48 bg-gradient-to-b from-primary/20 to-transparent" />
             <div className="absolute bottom-1/3 left-10 w-24 h-px bg-gradient-to-r from-white/10 to-transparent" />
@@ -134,7 +134,7 @@ export default function Contact() {
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-8 tracking-tight" data-testid="text-contact-title">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 md:mb-8 tracking-tight" data-testid="text-contact-title">
                   Parlons de votre{" "}
                   <span className="bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
                     projet.
@@ -148,7 +148,7 @@ export default function Contact() {
               </Reveal>
             </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 pb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 lg:gap-28 pb-16 md:pb-24">
             <div>
               <StaggerContainer className="space-y-10 mb-16">
                 {CONTACT_INFO.map((item, i) => (

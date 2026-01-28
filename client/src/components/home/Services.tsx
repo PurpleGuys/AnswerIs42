@@ -9,20 +9,20 @@ const ICONS = [Compass, BarChart3, Rocket];
 export function Services() {
   return (
     <SpotlightEffect>
-    <section id="services" className="py-40 md:py-48 px-6 border-t border-white/5 relative">
+    <section id="services" className="py-20 sm:py-28 md:py-40 lg:py-48 px-4 sm:px-6 border-t border-white/5 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-primary/30 to-transparent" />
       </div>
       
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-3xl mb-24">
+        <div className="max-w-3xl mb-12 sm:mb-16 md:mb-24">
           <Reveal>
             <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8" data-testid="text-services-label">
               Nos services
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight" data-testid="text-services-title">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight" data-testid="text-services-title">
               Une expertise complète{" "}
               <span className="bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
                 du projet IT.
@@ -31,7 +31,7 @@ export function Services() {
           </Reveal>
         </div>
         
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-14">
           {SERVICES.map((service, i) => {
             const Icon = ICONS[i];
             return (

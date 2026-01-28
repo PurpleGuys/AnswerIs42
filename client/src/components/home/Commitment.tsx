@@ -5,13 +5,13 @@ import { ArrowRight } from "lucide-react";
 
 export function Commitment() {
   return (
-    <section className="py-32 md:py-40 px-6">
+    <section className="py-20 sm:py-28 md:py-40 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="relative overflow-hidden rounded-sm border border-white/5">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-purple-900/[0.05]" />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/[0.03] to-transparent" />
           
-          <div className="relative p-10 md:p-16 lg:p-20">
+          <div className="relative p-6 sm:p-10 md:p-16 lg:p-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
                 <Reveal>
@@ -33,7 +33,7 @@ export function Commitment() {
                 <Reveal delay={0.3}>
                   <Link 
                     href="/contact" 
-                    className="group relative inline-flex items-center gap-4 bg-white text-background px-10 py-5 rounded-sm text-base font-medium hover:bg-white/90 transition-all overflow-hidden shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20"
+                    className="group relative inline-flex items-center justify-center gap-3 sm:gap-4 bg-white text-background px-6 sm:px-10 py-4 sm:py-5 rounded-sm text-sm sm:text-base font-medium hover:bg-white/90 transition-all overflow-hidden shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 w-full sm:w-auto"
                     data-testid="button-commitment-contact"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

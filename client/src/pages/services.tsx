@@ -278,7 +278,7 @@ export default function Services() {
         
         <PageTransition>
         <main>
-          <section className="pt-40 pb-24 px-6">
+          <section className="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24 px-4 sm:px-6">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-4xl">
                 <Reveal>
@@ -288,7 +288,7 @@ export default function Services() {
                 </Reveal>
                 
                 <Reveal delay={0.1}>
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-tight tracking-tight mb-10" data-testid="text-services-title">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white leading-tight tracking-tight mb-6 md:mb-10" data-testid="text-services-title">
                     Des solutions technologiques{" "}
                     <span className="bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
                       sur mesure
@@ -306,10 +306,10 @@ export default function Services() {
             </div>
           </section>
 
-          <section className="py-20 px-6" aria-labelledby="services-heading">
+          <section className="py-12 md:py-20 px-4 sm:px-6" aria-labelledby="services-heading">
             <h2 id="services-heading" className="sr-only">Liste de nos services</h2>
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
                 {SERVICES.map((service, i) => (
                   <ServiceCard key={service.id} service={service} index={i} />
                 ))}
@@ -317,9 +317,9 @@ export default function Services() {
             </div>
           </section>
 
-          <section className="py-32 px-6 border-t border-white/5">
+          <section className="py-20 md:py-32 px-4 sm:px-6 border-t border-white/5">
             <div className="max-w-7xl mx-auto">
-              <div className="relative p-14 md:p-20 bg-gradient-to-br from-primary/10 via-purple-900/5 to-transparent border border-primary/20 rounded-sm overflow-hidden">
+              <div className="relative p-8 sm:p-12 md:p-20 bg-gradient-to-br from-primary/10 via-purple-900/5 to-transparent border border-primary/20 rounded-sm overflow-hidden">
                 <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
                 
@@ -339,7 +339,7 @@ export default function Services() {
                   
                   <Link 
                     href="/contact"
-                    className="group relative flex items-center gap-4 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-sm text-lg font-medium transition-all whitespace-nowrap overflow-hidden shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
+                    className="group relative flex items-center justify-center gap-3 sm:gap-4 bg-primary hover:bg-primary/90 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-sm text-base sm:text-lg font-medium transition-all overflow-hidden shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 w-full sm:w-auto"
                     data-testid="link-services-contact"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

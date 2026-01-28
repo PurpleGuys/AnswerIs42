@@ -59,7 +59,7 @@ export function Hero() {
           </p>
         </Reveal>
         
-        <h1 className="text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-semibold tracking-tighter text-white mb-12">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold tracking-tighter text-white mb-8 md:mb-12">
           <Reveal delay={0.2}>
             <span className="block leading-tight">Answer is</span>
           </Reveal>
@@ -88,16 +88,16 @@ export function Hero() {
         </h1>
 
         <Reveal delay={0.4}>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl leading-relaxed mb-16 font-light tracking-wide" data-testid="text-hero-description">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/50 max-w-3xl leading-relaxed mb-10 md:mb-16 font-light tracking-wide" data-testid="text-hero-description">
             Nous pilotons vos projets IT avec une exécution précise, une gouvernance nette, et des résultats mesurables.
           </p>
         </Reveal>
 
         <Reveal delay={0.5}>
-          <div className="flex flex-col sm:flex-row gap-6 items-start">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-stretch sm:items-start w-full sm:w-auto">
             <Link 
               href="/contact" 
-              className="group relative bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-sm text-base font-medium transition-all flex items-center gap-4 overflow-hidden shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
+              className="group relative bg-primary hover:bg-primary/90 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-sm text-sm sm:text-base font-medium transition-all flex items-center justify-center gap-3 sm:gap-4 overflow-hidden shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
               data-testid="button-hero-contact"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -106,7 +106,7 @@ export function Hero() {
             </Link>
             <button 
               onClick={scrollToServices}
-              className="group relative flex items-center gap-4 px-10 py-5 rounded-sm text-base font-medium text-white/50 hover:text-white border border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-primary/10"
+              className="group relative flex items-center justify-center gap-3 sm:gap-4 px-6 sm:px-10 py-4 sm:py-5 rounded-sm text-sm sm:text-base font-medium text-white/50 hover:text-white border border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-primary/10"
               data-testid="button-hero-approach"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
