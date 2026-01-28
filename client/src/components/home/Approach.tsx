@@ -3,7 +3,7 @@ import { Reveal, StaggerContainer, StaggerItem } from "@/lib/animations";
 
 export function Approach() {
   return (
-    <section className="py-32 md:py-40 px-6 bg-gradient-to-b from-white/[0.02] via-transparent to-white/[0.02]">
+    <section id="approche" className="py-32 md:py-40 px-6 bg-gradient-to-b from-white/[0.02] via-transparent to-white/[0.02]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>

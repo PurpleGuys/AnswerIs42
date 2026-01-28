@@ -1,101 +1,200 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export function Navbar() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link 
-            href="/" 
-            className="text-lg font-medium tracking-tight text-white hover:opacity-80 transition-opacity"
-            data-testid="link-logo"
-          >
-            Answer is 42
-          </Link>
-          
-          <div className="hidden md:flex items-center space-x-8">
+      <nav 
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          isScrolled 
+            ? "glass-nav border-b border-white/10 py-0" 
+            : "bg-transparent border-b border-transparent py-2"
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className={cn(
+            "flex items-center justify-between transition-all duration-500",
+            isScrolled ? "h-16" : "h-20"
+          )}>
             <Link 
               href="/" 
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-white",
-                location === "/" ? "text-white" : "text-white/60"
-              )}
-              data-testid="link-home"
+              className="group flex items-center gap-1 transition-all duration-300"
+              data-testid="link-logo"
             >
-              Accueil
+              <span className="text-xl font-light tracking-tight text-white group-hover:text-white/80 transition-colors">
+                Answer is
+              </span>
+              <span className="text-xl font-semibold tracking-tight text-primary group-hover:text-primary/80 transition-colors">
+                42
+              </span>
             </Link>
-            <Link 
-              href="/contact" 
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-white",
-                location === "/contact" ? "text-white" : "text-white/60"
-              )}
-              data-testid="link-contact"
-            >
-              Contact
-            </Link>
-            <Link 
-              href="/contact" 
-              className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-sm text-sm font-medium transition-all duration-300"
-              data-testid="button-cta-contact"
-            >
-              Nous contacter
-            </Link>
-          </div>
+            
+            <div className="hidden md:flex items-center gap-12">
+              <div className="flex items-center gap-8">
+                <Link 
+                  href="/" 
+                  className={cn(
+                    "relative text-sm font-medium transition-all duration-300 hover:text-white",
+                    location === "/" 
+                      ? "text-white" 
+                      : "text-white/50"
+                  )}
+                  data-testid="link-home"
+                >
+                  Accueil
+                  {location === "/" && (
+                    <motion.span 
+                      layoutId="nav-indicator"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
+                      initial={false}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </Link>
+                <Link 
+                  href="/#services" 
+                  className="text-sm font-medium text-white/50 hover:text-white transition-all duration-300"
+                  data-testid="link-services"
+                >
+                  Services
+                </Link>
+                <Link 
+                  href="/#approche" 
+                  className="text-sm font-medium text-white/50 hover:text-white transition-all duration-300"
+                  data-testid="link-approche"
+                >
+                  Approche
+                </Link>
+              </div>
+              
+              <Link 
+                href="/contact" 
+                className="group relative overflow-hidden bg-white text-background px-6 py-2.5 rounded-sm text-sm font-medium transition-all duration-300 hover:bg-white/90"
+                data-testid="button-cta-contact"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Nous contacter
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            </div>
 
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2"
-            aria-label="Toggle menu"
-            data-testid="button-menu-toggle"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden relative w-10 h-10 flex items-center justify-center text-white"
+              aria-label="Toggle menu"
+              data-testid="button-menu-toggle"
+            >
+              <motion.div
+                animate={{ rotate: isOpen ? 90 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </motion.div>
+            </button>
+          </div>
         </div>
       </nav>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -20 }}
-            transition={{ duration: prefersReducedMotion ? 0.1 : 0.2 }}
-            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl md:hidden pt-20"
+            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-background md:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              <Link 
-                href="/" 
-                onClick={() => setIsOpen(false)}
-                className="text-3xl font-medium text-white hover:text-primary transition-colors"
-                data-testid="link-mobile-home"
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute top-1/4 right-10 w-px h-48 bg-gradient-to-b from-primary/20 to-transparent" />
+              <div className="absolute bottom-1/3 left-10 w-24 h-px bg-gradient-to-r from-white/10 to-transparent" />
+            </div>
+            
+            <div className="flex flex-col h-full pt-24 px-8">
+              <motion.div 
+                className="space-y-1"
+                initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
               >
-                Accueil
-              </Link>
-              <Link 
-                href="/contact" 
-                onClick={() => setIsOpen(false)}
-                className="text-3xl font-medium text-white hover:text-primary transition-colors"
-                data-testid="link-mobile-contact"
+                <Link 
+                  href="/" 
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
+                    location === "/" ? "text-primary" : "text-white"
+                  )}
+                  data-testid="link-mobile-home"
+                >
+                  Accueil
+                </Link>
+                <Link 
+                  href="/#services" 
+                  onClick={() => setIsOpen(false)}
+                  className="block py-4 text-4xl font-light tracking-tight text-white/60 hover:text-white transition-colors border-b border-white/5"
+                  data-testid="link-mobile-services"
+                >
+                  Services
+                </Link>
+                <Link 
+                  href="/#approche" 
+                  onClick={() => setIsOpen(false)}
+                  className="block py-4 text-4xl font-light tracking-tight text-white/60 hover:text-white transition-colors border-b border-white/5"
+                  data-testid="link-mobile-approche"
+                >
+                  Approche
+                </Link>
+                <Link 
+                  href="/contact" 
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
+                    location === "/contact" ? "text-primary" : "text-white/60 hover:text-white"
+                  )}
+                  data-testid="link-mobile-contact"
+                >
+                  Contact
+                </Link>
+              </motion.div>
+              
+              <motion.div 
+                className="mt-auto mb-12"
+                initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
               >
-                Contact
-              </Link>
-              <Link 
-                href="/contact" 
-                onClick={() => setIsOpen(false)}
-                className="mt-8 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-sm text-lg font-medium transition-all"
-                data-testid="button-mobile-cta"
-              >
-                Nous contacter
-              </Link>
+                <Link 
+                  href="/contact" 
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-3 w-full bg-white text-background py-4 rounded-sm text-lg font-medium"
+                  data-testid="button-mobile-cta"
+                >
+                  Nous contacter
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                
+                <p className="text-center text-white/30 text-sm mt-6">
+                  contact@answeris42.com
+                </p>
+              </motion.div>
             </div>
           </motion.div>
         )}
