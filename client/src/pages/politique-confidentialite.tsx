@@ -58,7 +58,7 @@ export default function PolitiqueConfidentialite() {
                 <div className="space-y-2">
                   <p><strong className="text-white">Responsable :</strong> Answer is 42</p>
                   <p><strong className="text-white">Adresse :</strong> [Adresse à compléter]</p>
-                  <p><strong className="text-white">Email :</strong> contact@answeris42.com</p>
+                  <p><strong className="text-white">Email :</strong> contact@is42.fr</p>
                   <p><strong className="text-white">DPO (Délégué à la Protection des Données) :</strong> [À compléter si applicable]</p>
                 </div>
               </section>
@@ -178,7 +178,7 @@ export default function PolitiqueConfidentialite() {
                   <li><strong className="text-white">Droit de définir des directives post-mortem :</strong> concernant le sort de vos données après votre décès</li>
                 </ul>
                 <p className="mt-4">
-                  Pour exercer ces droits, contactez-nous à : <strong className="text-white">contact@answeris42.com</strong>
+                  Pour exercer ces droits, contactez-nous à : <strong className="text-white">contact@is42.fr</strong>
                 </p>
                 <p className="mt-2">
                   Nous répondrons à votre demande dans un délai d'un mois. Ce délai peut être prolongé de 

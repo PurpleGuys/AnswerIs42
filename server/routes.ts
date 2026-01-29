@@ -107,7 +107,7 @@ ${message}
 
         await transporter.sendMail({
           from: process.env.SMTP_FROM,
-          to: process.env.CONTACT_EMAIL || "contact@answeris42.fr",
+          to: process.env.CONTACT_EMAIL || "contact@is42.fr",
           subject: `Nouveau contact: ${name}`,
           text: emailContent,
         });
@@ -125,7 +125,7 @@ ${message}
 
         return res.json({
           success: true,
-          message: "SMTP non configuré. Pour nous contacter directement : contact@answeris42.com",
+          message: "SMTP non configuré. Pour nous contacter directement : contact@is42.fr",
           fallback: true
         });
       }

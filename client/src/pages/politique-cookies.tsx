@@ -239,7 +239,7 @@ export default function PolitiqueCookies() {
                 <h2 className="text-2xl font-medium text-white mb-4">9. Contact</h2>
                 <p>
                   Pour toute question concernant notre utilisation des cookies, vous pouvez nous 
-                  contacter à : <strong className="text-white">contact@answeris42.com</strong>
+                  contacter à : <strong className="text-white">contact@is42.fr</strong>
                 </p>
               </section>
             </Reveal>

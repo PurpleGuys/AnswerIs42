@@ -89,8 +89,8 @@ SMTP_HOST=smtp.example.com
 SMTP_PORT=587
 SMTP_USER=your_user
 SMTP_PASS=your_pass
-SMTP_FROM=contact@answeris42.fr
-CONTACT_EMAIL=contact@answeris42.fr
+SMTP_FROM=contact@is42.fr
+CONTACT_EMAIL=contact@is42.fr
 NODE_ENV=production
 PORT=5000
 ```

@@ -26,7 +26,7 @@ const formSchema = z.object({
 });
 
 const CONTACT_INFO = [
-  { icon: Mail, label: "Email", value: "contact@answeris42.com", href: "mailto:contact@answeris42.com" },
+  { icon: Mail, label: "Email", value: "contact@is42.fr", href: "mailto:contact@is42.fr" },
   { icon: MapPin, label: "Localisation", value: "France / Remote", href: null },
   { icon: Clock, label: "Disponibilité", value: "Lun - Ven, 9h - 18h", href: null },
 ];
@@ -66,7 +66,7 @@ export default function Contact() {
       setIsSuccess(true);
       
       if (data.fallback) {
-        toast.success("Message reçu. Vous pouvez aussi nous écrire directement à contact@answeris42.com");
+        toast.success("Message reçu. Vous pouvez aussi nous écrire directement à contact@is42.fr");
       } else {
         toast.success("Message envoyé. Nous revenons vers vous rapidement.");
       }
@@ -105,7 +105,7 @@ export default function Contact() {
             "mainEntity": {
               "@type": "Organization",
               "name": "Answer is 42",
-              "email": "contact@answeris42.com",
+              "email": "contact@is42.fr",
               "areaServed": "France"
             }
           })}

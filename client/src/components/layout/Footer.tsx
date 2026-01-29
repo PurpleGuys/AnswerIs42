@@ -113,7 +113,7 @@ export function Footer() {
                 <Reveal delay={0.1}>
                   <div className="space-y-6">
                     <a 
-                      href="mailto:contact@answeris42.fr" 
+                      href="mailto:contact@is42.fr" 
                       className="flex items-start gap-4 text-white/50 hover:text-white transition-colors duration-300 group"
                       data-testid="link-email"
                     >
@@ -122,7 +122,7 @@ export function Footer() {
                       </div>
                       <div>
                         <p className="text-sm text-white/30 mb-1">Email</p>
-                        <p className="text-white/70 group-hover:text-white transition-colors">contact@answeris42.fr</p>
+                        <p className="text-white/70 group-hover:text-white transition-colors">contact@is42.fr</p>
                       </div>
                     </a>
                     

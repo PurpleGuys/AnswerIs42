@@ -157,7 +157,7 @@ export default function CGU() {
                 </p>
                 <p>
                   La création de liens hypertextes vers le Site est soumise à l'accord préalable de l'Éditeur. 
-                  Toute demande doit être adressée à contact@answeris42.com.
+                  Toute demande doit être adressée à contact@is42.fr.
                 </p>
               </section>
             </Reveal>
@@ -236,7 +236,7 @@ export default function CGU() {
                 <h2 className="text-2xl font-medium text-white mb-4">Article 12 - Contact</h2>
                 <p>
                   Pour toute question relative aux présentes CGU, vous pouvez nous contacter à l'adresse 
-                  suivante : <strong className="text-white">contact@answeris42.com</strong>
+                  suivante : <strong className="text-white">contact@is42.fr</strong>
                 </p>
               </section>
             </Reveal>

@@ -224,7 +224,7 @@ export function Navbar() {
                 </Link>
                 
                 <p className="text-center text-white/30 text-sm mt-6">
-                  contact@answeris42.com
+                  contact@is42.fr
                 </p>
               </motion.div>
             </div>

@@ -51,7 +51,7 @@ export default function MentionsLegales() {
                   <p><strong className="text-white">RCS :</strong> [Ville et numéro RCS à compléter]</p>
                   <p><strong className="text-white">Numéro de TVA intracommunautaire :</strong> [À compléter]</p>
                   <p><strong className="text-white">Directeur de la publication :</strong> [Nom du responsable légal]</p>
-                  <p><strong className="text-white">Email :</strong> contact@answeris42.com</p>
+                  <p><strong className="text-white">Email :</strong> contact@is42.fr</p>
                   <p><strong className="text-white">Téléphone :</strong> [À compléter]</p>
                 </div>
               </section>
