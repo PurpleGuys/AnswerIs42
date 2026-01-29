@@ -1,141 +1,158 @@
 import { Link } from "wouter";
 import { Reveal } from "@/lib/animations";
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Linkedin } from "lucide-react";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+  
   return (
-    <footer className="border-t border-white/5 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.02] to-transparent pointer-events-none" />
+    <footer className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.03] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
-          <div className="lg:col-span-2">
+      <div className="max-w-7xl mx-auto px-6 pt-24 pb-12 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-20">
+          <div className="lg:col-span-5">
             <Reveal>
               <Link 
                 href="/" 
-                className="text-2xl font-medium text-white mb-6 inline-block hover:text-primary transition-colors"
+                className="inline-block mb-8 group"
                 data-testid="link-footer-logo"
               >
-                Answer is 42
+                <span className="text-3xl font-semibold tracking-tight bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent group-hover:from-primary group-hover:via-purple-400 group-hover:to-primary transition-all duration-500">
+                  Answer is 42
+                </span>
               </Link>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="text-white/40 max-w-md leading-relaxed mb-8">
-                Cabinet de consulting IT spécialisé en cadrage, pilotage et delivery de projets. 
-                Une approche sobre pour des résultats mesurables.
+              <p className="text-white/50 max-w-sm leading-relaxed text-lg font-light mb-10">
+                Consulting IT spécialisé en gestion de projet, développement et transformation digitale.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
-              <div className="flex gap-4">
-                <a 
-                  href="https://linkedin.com/company/answeris42" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all"
-                  data-testid="link-linkedin"
-                  aria-label="LinkedIn"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
+              <a 
+                href="https://linkedin.com/company/answeris42" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-white/10 text-white/60 hover:text-white hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                data-testid="link-linkedin"
+              >
+                <Linkedin className="w-4 h-4" />
+                <span className="text-sm font-medium">Suivez-nous sur LinkedIn</span>
+                <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+              </a>
+            </Reveal>
+          </div>
+          
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 lg:gap-8">
+              <div>
+                <Reveal>
+                  <h4 className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-8" data-testid="text-footer-nav-title">
+                    Navigation
+                  </h4>
+                </Reveal>
+                <Reveal delay={0.1}>
+                  <ul className="space-y-5">
+                    {[
+                      { href: "/", label: "Accueil" },
+                      { href: "/services", label: "Services" },
+                      { href: "/approche", label: "Approche" },
+                      { href: "/contact", label: "Contact" },
+                    ].map((link) => (
+                      <li key={link.href}>
+                        <Link 
+                          href={link.href} 
+                          className="text-white/50 hover:text-white transition-colors duration-300 inline-flex items-center gap-2 group"
+                          data-testid={`link-footer-${link.label.toLowerCase()}`}
+                        >
+                          <span className="w-0 h-px bg-primary group-hover:w-4 transition-all duration-300" />
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
               </div>
-            </Reveal>
-          </div>
-          
-          <div>
-            <Reveal>
-              <h4 className="text-xs font-medium text-white/40 uppercase tracking-[0.2em] mb-6" data-testid="text-footer-nav-title">Navigation</h4>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <ul className="space-y-4">
-                <li>
-                  <Link href="/" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-home">
-                    Accueil
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-services">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/approche" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-approche">
-                    Approche
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-contact">
+              
+              <div>
+                <Reveal>
+                  <h4 className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-8" data-testid="text-footer-legal-title">
+                    Légal
+                  </h4>
+                </Reveal>
+                <Reveal delay={0.1}>
+                  <ul className="space-y-5">
+                    {[
+                      { href: "/mentions-legales", label: "Mentions légales" },
+                      { href: "/politique-confidentialite", label: "Confidentialité" },
+                      { href: "/cgu", label: "CGU" },
+                      { href: "/politique-cookies", label: "Cookies" },
+                    ].map((link) => (
+                      <li key={link.href}>
+                        <Link 
+                          href={link.href} 
+                          className="text-white/50 hover:text-white transition-colors duration-300 inline-flex items-center gap-2 group"
+                          data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          <span className="w-0 h-px bg-primary group-hover:w-4 transition-all duration-300" />
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              </div>
+              
+              <div className="col-span-2 sm:col-span-1">
+                <Reveal>
+                  <h4 className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-8">
                     Contact
-                  </Link>
-                </li>
-              </ul>
-            </Reveal>
-          </div>
-          
-          <div>
-            <Reveal>
-              <h4 className="text-xs font-medium text-white/40 uppercase tracking-[0.2em] mb-6" data-testid="text-footer-legal-title">Légal</h4>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <ul className="space-y-4">
-                <li>
-                  <Link href="/mentions-legales" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-mentions">
-                    Mentions légales
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/politique-confidentialite" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-confidentialite">
-                    Confidentialité
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cgu" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-cgu">
-                    CGU
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/politique-cookies" className="text-white/60 hover:text-white transition-colors" data-testid="link-footer-cookies">
-                    Cookies
-                  </Link>
-                </li>
-              </ul>
-            </Reveal>
-          </div>
-          
-          <div>
-            <Reveal>
-              <h4 className="text-xs font-medium text-white/40 uppercase tracking-[0.2em] mb-6">Contact</h4>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <ul className="space-y-4">
-                <li>
-                  <a 
-                    href="mailto:contact@answeris42.com" 
-                    className="flex items-center gap-3 text-white/60 hover:text-white transition-colors group"
-                    data-testid="link-email"
-                  >
-                    <Mail className="w-4 h-4" />
-                    contact@answeris42.com
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </li>
-                <li className="flex items-center gap-3 text-white/40" data-testid="text-location">
-                  <MapPin className="w-4 h-4" />
-                  France / Remote
-                </li>
-              </ul>
-            </Reveal>
+                  </h4>
+                </Reveal>
+                <Reveal delay={0.1}>
+                  <div className="space-y-6">
+                    <a 
+                      href="mailto:contact@answeris42.fr" 
+                      className="flex items-start gap-4 text-white/50 hover:text-white transition-colors duration-300 group"
+                      data-testid="link-email"
+                    >
+                      <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all duration-300 flex-shrink-0">
+                        <Mail className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-white/30 mb-1">Email</p>
+                        <p className="text-white/70 group-hover:text-white transition-colors">contact@answeris42.fr</p>
+                      </div>
+                    </a>
+                    
+                    <div className="flex items-start gap-4 text-white/50" data-testid="text-location">
+                      <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-white/30 mb-1">Localisation</p>
+                        <p className="text-white/70">France / Remote</p>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/30 text-sm" data-testid="text-copyright">
-            © {new Date().getFullYear()} Answer is 42. Tous droits réservés.
-          </p>
-          <p className="text-white/20 text-sm">
-            Consulting IT
-          </p>
+        <div className="relative">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <p className="text-white/30 text-sm" data-testid="text-copyright">
+              © {currentYear} Answer is 42. Tous droits réservés.
+            </p>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-white/40 text-sm">Disponible pour nouveaux projets</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
