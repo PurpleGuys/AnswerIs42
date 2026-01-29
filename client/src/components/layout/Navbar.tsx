@@ -143,90 +143,101 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-background md:hidden"
+            style={{ touchAction: "auto" }}
           >
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute top-1/4 right-10 w-px h-48 bg-gradient-to-b from-primary/20 to-transparent" />
               <div className="absolute bottom-1/3 left-10 w-24 h-px bg-gradient-to-r from-white/10 to-transparent" />
             </div>
             
-            <div className="flex flex-col h-full pt-24 px-8">
-              <motion.div 
-                className="space-y-1"
-                initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-              >
-                <Link 
+            <div className="flex flex-col h-full pt-24 px-8 relative z-10">
+              <div className="space-y-1">
+                <a 
                   href="/" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    window.location.href = "/";
+                  }}
                   className={cn(
-                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5 cursor-pointer",
                     location === "/" ? "text-primary" : "text-white"
                   )}
                   data-testid="link-mobile-home"
                 >
                   Accueil
-                </Link>
-                <Link 
+                </a>
+                <a 
                   href="/services" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    window.location.href = "/services";
+                  }}
                   className={cn(
-                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
-                    location === "/services" ? "text-primary" : "text-white/60 hover:text-white"
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5 cursor-pointer",
+                    location === "/services" ? "text-primary" : "text-white/60"
                   )}
                   data-testid="link-mobile-services"
                 >
                   Services
-                </Link>
-                <Link 
+                </a>
+                <a 
                   href="/approche" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    window.location.href = "/approche";
+                  }}
                   className={cn(
-                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
-                    location === "/approche" ? "text-primary" : "text-white/60 hover:text-white"
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5 cursor-pointer",
+                    location === "/approche" ? "text-primary" : "text-white/60"
                   )}
                   data-testid="link-mobile-approche"
                 >
                   Approche
-                </Link>
-                <Link 
+                </a>
+                <a 
                   href="/contact" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    window.location.href = "/contact";
+                  }}
                   className={cn(
-                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5",
-                    location === "/contact" ? "text-primary" : "text-white/60 hover:text-white"
+                    "block py-4 text-4xl font-light tracking-tight transition-colors border-b border-white/5 cursor-pointer",
+                    location === "/contact" ? "text-primary" : "text-white/60"
                   )}
                   data-testid="link-mobile-contact"
                 >
                   Contact
-                </Link>
-              </motion.div>
+                </a>
+              </div>
               
-              <motion.div 
-                className="mt-auto mb-12"
-                initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <Link 
+              <div className="mt-auto mb-12">
+                <a 
                   href="/contact" 
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-3 w-full bg-white text-background py-4 rounded-sm text-lg font-medium"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    window.location.href = "/contact";
+                  }}
+                  className="flex items-center justify-center gap-3 w-full bg-white text-background py-4 rounded-sm text-lg font-medium cursor-pointer"
                   data-testid="button-mobile-cta"
                 >
                   Nous contacter
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </Link>
+                </a>
                 
                 <p className="text-center text-white/50 text-sm mt-6">
                   contact@is42.fr
                 </p>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         )}
