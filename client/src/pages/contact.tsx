@@ -9,6 +9,7 @@ import { PageTransition } from "@/components/ui/PageTransition";
 import { SpotlightEffect } from "@/components/ui/SpotlightEffect";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { Reveal, StaggerContainer, StaggerItem } from "@/lib/animations";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -127,6 +128,9 @@ export default function Contact() {
           </div>
           
           <div className="max-w-7xl mx-auto relative">
+            <div className="mb-8">
+              <Breadcrumbs />
+            </div>
             <div className="mb-24 md:mb-28">
               <Reveal>
                 <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8" data-testid="text-contact-label">

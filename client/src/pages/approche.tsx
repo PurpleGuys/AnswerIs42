@@ -11,6 +11,7 @@ import { GrainTexture } from "@/components/ui/GrainTexture";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SpotlightEffect } from "@/components/ui/SpotlightEffect";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { 
   Search, 
   Target, 
@@ -246,6 +247,9 @@ export default function Approche() {
             </motion.div>
             
             <div className="max-w-7xl mx-auto relative z-10">
+              <div className="mb-8">
+                <Breadcrumbs />
+              </div>
               <div className="max-w-4xl">
                 <Reveal>
                   <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8" data-testid="text-approach-label">

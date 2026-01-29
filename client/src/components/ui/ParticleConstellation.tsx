@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useReducedAnimations } from "@/hooks/useIsMobile";
 
 interface Particle {
   id: number;
@@ -12,15 +13,17 @@ interface Particle {
 
 export function ParticleConstellation() {
   const prefersReducedMotion = useReducedMotion();
+  const shouldReduceAnimations = useReducedAnimations();
   const [particles, setParticles] = useState<Particle[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || shouldReduceAnimations) return;
 
     const generateParticles = () => {
       const newParticles: Particle[] = [];
-      for (let i = 0; i < 50; i++) {
+      const particleCount = window.innerWidth < 1024 ? 25 : 50;
+      for (let i = 0; i < particleCount; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,
@@ -34,9 +37,9 @@ export function ParticleConstellation() {
     };
 
     generateParticles();
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, shouldReduceAnimations]);
 
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || shouldReduceAnimations) {
     return null;
   }
 

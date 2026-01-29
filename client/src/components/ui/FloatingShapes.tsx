@@ -1,6 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useReducedAnimations } from "@/hooks/useIsMobile";
 
 export function FloatingShapes() {
+  const prefersReducedMotion = useReducedMotion();
+  const shouldReduceAnimations = useReducedAnimations();
+
+  if (prefersReducedMotion || shouldReduceAnimations) {
+    return (
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-[15%] right-[10%] w-64 h-64 border border-primary/10 rounded-full" />
+        <div className="absolute top-[60%] left-[5%] w-48 h-48 border border-white/5 rotate-45" />
+        <div className="absolute top-[30%] left-[20%] w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-xl" />
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       <motion.div

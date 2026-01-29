@@ -9,6 +9,7 @@ import { TechGrid } from "@/components/ui/TechGrid";
 import { GrainTexture } from "@/components/ui/GrainTexture";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { GlowCard } from "@/components/ui/GlowCard";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { 
   Database, 
   Code2, 
@@ -280,6 +281,9 @@ export default function Services() {
         <main>
           <section className="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24 px-4 sm:px-6">
             <div className="max-w-7xl mx-auto">
+              <div className="mb-8">
+                <Breadcrumbs />
+              </div>
               <div className="max-w-4xl">
                 <Reveal>
                   <p className="text-primary/80 text-xs font-medium tracking-[0.4em] uppercase mb-8" data-testid="text-services-label">

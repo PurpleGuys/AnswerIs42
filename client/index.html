@@ -28,21 +28,44 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Organization", "ProfessionalService"],
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://answeris42.fr/#organization",
       "name": "Answer is 42",
       "url": "https://answeris42.fr",
       "email": "contact@is42.fr",
       "description": "Cabinet de consulting IT spécialisé en gestion de projet, développement Python, SQL, C# et transformation digitale",
-      "areaServed": ["FR", "Europe"],
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR",
+        "addressLocality": "France"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "48.8566",
+        "longitude": "2.3522"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "France"},
+        {"@type": "Country", "name": "Belgium"},
+        {"@type": "Country", "name": "Switzerland"}
+      ],
       "knowsAbout": ["IT Consulting", "Project Management", "Python", "SQL", "C#", ".NET", "Cloud Computing", "DevOps", "Business Intelligence"],
-      "sameAs": [
-        "https://www.linkedin.com/company/answeris42"
-      ]
+      "sameAs": ["https://www.linkedin.com/company/answeris42"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
     }
     </script>
   </head>
