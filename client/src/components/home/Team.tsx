@@ -8,7 +8,7 @@ const TEAM_MEMBERS = [
     name: "Alexandre Martin",
     role: "Fondateur & Consultant Senior",
     expertise: "Gouvernance IT, Transformation digitale",
-    bio: "15 ans d'expérience en pilotage de projets complexes pour des grands comptes.",
+    bio: "Spécialiste du pilotage de projets IT complexes et de la transformation digitale.",
     linkedin: "#",
     email: "alexandre@answeris42.com",
   },

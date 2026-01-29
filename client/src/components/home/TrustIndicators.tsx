@@ -1,10 +1,10 @@
 import { Reveal, StaggerContainer, StaggerItem, AnimatedCounter } from "@/lib/animations";
 
 const STATS = [
-  { value: "10+", label: "Années d'expérience", sublabel: "en gestion de projets IT" },
-  { value: "50+", label: "Projets livrés", sublabel: "dans des secteurs variés" },
-  { value: "98%", label: "Satisfaction client", sublabel: "sur nos missions" },
-  { value: "24h", label: "Temps de réponse", sublabel: "pour chaque demande" },
+  { value: "48h", label: "Temps de réponse", sublabel: "pour chaque demande" },
+  { value: "100%", label: "Transparence", sublabel: "sur les coûts et délais" },
+  { value: "1", label: "Interlocuteur dédié", sublabel: "du début à la fin" },
+  { value: "0", label: "Surprise", sublabel: "en fin de projet" },
 ];
 
 export function TrustIndicators() {
@@ -13,7 +13,7 @@ export function TrustIndicators() {
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <p className="text-center text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-16" data-testid="text-trust-label">
-            Nos chiffres
+            Nos engagements
           </p>
         </Reveal>
         

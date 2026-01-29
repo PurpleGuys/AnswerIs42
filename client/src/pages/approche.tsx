@@ -121,7 +121,7 @@ const VALUES = [
 const COMMITMENTS = [
   { number: "48h", label: "Délai de réponse garanti" },
   { number: "100%", label: "Transparence sur les coûts" },
-  { number: "15+", label: "Années d'expérience cumulée" },
+  { number: "1", label: "Interlocuteur unique dédié" },
   { number: "0", label: "Surprise en fin de projet" }
 ];
 
