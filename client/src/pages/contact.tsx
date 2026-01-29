@@ -121,7 +121,7 @@ export default function Contact() {
         
         <PageTransition>
         <SpotlightEffect className="flex-grow">
-        <main className="flex-grow pt-28 sm:pt-32 md:pt-40 px-4 sm:px-6 relative">
+        <main id="main-content" className="flex-grow pt-28 sm:pt-32 md:pt-40 px-4 sm:px-6 relative">
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute top-1/4 right-10 w-px h-48 bg-gradient-to-b from-primary/20 to-transparent" />
             <div className="absolute bottom-1/3 left-10 w-24 h-px bg-gradient-to-r from-white/10 to-transparent" />
@@ -159,10 +159,10 @@ export default function Contact() {
                   <StaggerItem key={i}>
                     <div className="flex items-start gap-6 group" data-testid={`contact-info-${item.label.toLowerCase()}`}>
                       <div className="w-14 h-14 rounded-sm bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
-                        <item.icon className="w-6 h-6 text-white/40 group-hover:text-primary transition-colors" />
+                        <item.icon className="w-6 h-6 text-white/40 group-hover:text-primary transition-colors" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="text-xs text-white/40 uppercase tracking-wider mb-2" data-testid={`text-info-label-${item.label.toLowerCase()}`}>{item.label}</p>
+                        <p className="text-xs text-white/60 uppercase tracking-wider mb-2" data-testid={`text-info-label-${item.label.toLowerCase()}`}>{item.label}</p>
                         {item.href ? (
                           <a href={item.href} className="text-xl text-white hover:text-primary transition-colors" data-testid={`link-contact-${item.label.toLowerCase()}`}>
                             {item.value}
@@ -193,7 +193,7 @@ export default function Contact() {
                 {isSuccess ? (
                   <div className="text-center py-12" data-testid="status-success">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 className="w-8 h-8 text-primary" />
+                      <CheckCircle2 className="w-8 h-8 text-primary" aria-hidden="true" />
                     </div>
                     <h3 className="text-2xl text-white mb-3 font-medium" data-testid="text-success-title">Message bien reçu</h3>
                     <p className="text-white/50 mb-8" data-testid="text-success-message">Nous revenons vers vous très rapidement.</p>
@@ -203,7 +203,7 @@ export default function Contact() {
                       data-testid="button-send-another"
                     >
                       Envoyer un autre message
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </button>
                   </div>
                 ) : (
@@ -253,7 +253,7 @@ export default function Contact() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-white/70 text-sm" data-testid="label-company">
-                              Société <span className="text-white/30" data-testid="text-optional">(optionnel)</span>
+                              Société <span className="text-white/50" data-testid="text-optional">(optionnel)</span>
                             </FormLabel>
                             <FormControl>
                               <Input 
@@ -295,11 +295,11 @@ export default function Contact() {
                       >
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                         {isSubmitting ? (
-                          <><Loader2 className="w-5 h-5 animate-spin relative" /> <span className="relative">Envoi en cours...</span></>
+                          <><Loader2 className="w-5 h-5 animate-spin relative" aria-hidden="true" /> <span className="relative">Envoi en cours...</span></>
                         ) : (
                           <>
                             <span className="relative">Envoyer le message</span>
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative" />
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative" aria-hidden="true" />
                           </>
                         )}
                       </button>

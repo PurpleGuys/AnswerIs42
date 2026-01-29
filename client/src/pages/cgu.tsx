@@ -25,7 +25,7 @@ export default function CGU() {
         <GrainTexture />
         <Navbar />
       
-      <main className="flex-grow pt-32 md:pt-40 px-6 pb-20">
+      <main id="main-content" className="flex-grow pt-32 md:pt-40 px-6 pb-20">
         <div className="max-w-4xl mx-auto">
           <Reveal>
             <p className="text-primary/80 text-xs font-medium tracking-[0.3em] uppercase mb-6" data-testid="text-cgu-label">

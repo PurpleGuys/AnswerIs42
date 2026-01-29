@@ -77,7 +77,7 @@ export default function Home() {
         <GrainTexture />
         <Navbar />
         <PageTransition>
-          <main>
+          <main id="main-content">
             <Hero />
             <About />
             <TrustIndicators />

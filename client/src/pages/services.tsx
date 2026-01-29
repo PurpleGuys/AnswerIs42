@@ -278,7 +278,7 @@ export default function Services() {
         <Navbar />
         
         <PageTransition>
-        <main>
+        <main id="main-content">
           <section className="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24 px-4 sm:px-6">
             <div className="max-w-7xl mx-auto">
               <div className="mb-8">

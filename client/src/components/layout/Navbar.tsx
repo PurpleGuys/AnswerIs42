@@ -118,7 +118,7 @@ export function Navbar() {
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Nous contacter
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                 </span>
               </Link>
             </div>
@@ -133,7 +133,7 @@ export function Navbar() {
                 animate={{ rotate: isOpen ? 90 : 0 }}
                 transition={{ duration: 0.2 }}
               >
-                {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
               </motion.div>
             </button>
           </div>
@@ -220,10 +220,10 @@ export function Navbar() {
                   data-testid="button-mobile-cta"
                 >
                   Nous contacter
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Link>
                 
-                <p className="text-center text-white/30 text-sm mt-6">
+                <p className="text-center text-white/50 text-sm mt-6">
                   contact@is42.fr
                 </p>
               </motion.div>

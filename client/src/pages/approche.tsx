@@ -235,7 +235,7 @@ export default function Approche() {
         <Navbar />
         
         <PageTransition>
-        <main>
+        <main id="main-content">
           <SpotlightEffect>
           <section ref={heroRef} className="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24 px-4 sm:px-6 relative overflow-hidden">
             <motion.div 

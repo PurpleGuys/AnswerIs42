@@ -37,9 +37,9 @@ export function Footer() {
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-white/10 text-white/60 hover:text-white hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
                 data-testid="link-linkedin"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
                 <span className="text-sm font-medium">Suivez-nous sur LinkedIn</span>
-                <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" aria-hidden="true" />
               </a>
             </Reveal>
           </div>
@@ -118,20 +118,20 @@ export function Footer() {
                       data-testid="link-email"
                     >
                       <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all duration-300 flex-shrink-0">
-                        <Mail className="w-4 h-4" />
+                        <Mail className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="text-sm text-white/30 mb-1">Email</p>
+                        <p className="text-sm text-white/50 mb-1">Email</p>
                         <p className="text-white/70 group-hover:text-white transition-colors">contact@is42.fr</p>
                       </div>
                     </a>
                     
                     <div className="flex items-start gap-4 text-white/50" data-testid="text-location">
                       <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-4 h-4" />
+                        <MapPin className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="text-sm text-white/30 mb-1">Localisation</p>
+                        <p className="text-sm text-white/50 mb-1">Localisation</p>
                         <p className="text-white/70">France / Remote</p>
                       </div>
                     </div>
@@ -145,12 +145,12 @@ export function Footer() {
         <div className="relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <p className="text-white/30 text-sm" data-testid="text-copyright">
+            <p className="text-white/50 text-sm" data-testid="text-copyright">
               © {currentYear} Answer is 42. Tous droits réservés.
             </p>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-white/40 text-sm">Disponible pour nouveaux projets</span>
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true" />
+              <span className="text-white/60 text-sm">Disponible pour nouveaux projets</span>
             </div>
           </div>
         </div>
