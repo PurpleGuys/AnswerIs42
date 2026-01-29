@@ -48,7 +48,7 @@ export function Breadcrumbs() {
       
       <nav 
         aria-label="Fil d'Ariane" 
-        className="flex items-center gap-2 text-sm text-white/40"
+        className="flex items-center gap-2 text-sm text-white/60"
         data-testid="breadcrumbs"
       >
         {breadcrumbItems.map((item, index) => (

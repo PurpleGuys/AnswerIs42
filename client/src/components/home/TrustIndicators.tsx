@@ -27,7 +27,7 @@ export function TrustIndicators() {
                   </span>
                 </div>
                 <p className="text-white/80 font-medium mb-1" data-testid={`text-stat-label-${i}`}>{stat.label}</p>
-                <p className="text-white/40 text-sm" data-testid={`text-stat-sublabel-${i}`}>{stat.sublabel}</p>
+                <p className="text-white/60 text-sm" data-testid={`text-stat-sublabel-${i}`}>{stat.sublabel}</p>
               </div>
             </StaggerItem>
           ))}

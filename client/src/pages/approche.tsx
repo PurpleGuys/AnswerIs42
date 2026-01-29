@@ -168,7 +168,7 @@ function MethodologyCard({ step, index }: { step: typeof METHODOLOGY_STEPS[0]; i
           </div>
 
           <div>
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Livrables</p>
+            <p className="text-xs font-medium text-white/60 uppercase tracking-wider mb-4">Livrables</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {step.deliverables.map((deliverable, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-white/50">

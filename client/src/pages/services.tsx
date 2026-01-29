@@ -189,7 +189,7 @@ function ServiceCard({ service, index }: { service: typeof SERVICES[0]; index: n
           </p>
 
           <div className="mb-8">
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Technologies</p>
+            <p className="text-xs font-medium text-white/60 uppercase tracking-wider mb-4">Technologies</p>
             <div className="flex flex-wrap gap-2">
               {service.technologies.map((tech, i) => (
                 <span 
@@ -203,7 +203,7 @@ function ServiceCard({ service, index }: { service: typeof SERVICES[0]; index: n
           </div>
 
           <div>
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider mb-4">Expertises</p>
+            <p className="text-xs font-medium text-white/60 uppercase tracking-wider mb-4">Expertises</p>
             <ul className="space-y-3">
               {service.capabilities.map((cap, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-white/50">

@@ -46,7 +46,7 @@ export function About() {
                   <blockquote className="text-2xl sm:text-3xl md:text-4xl text-white font-light italic leading-relaxed" data-testid="text-quote">
                     "La complexité est l'ennemi de l'exécution."
                   </blockquote>
-                  <p className="mt-6 text-white/40 text-base tracking-wider">— Notre philosophie</p>
+                  <p className="mt-6 text-white/60 text-base tracking-wider">— Notre philosophie</p>
                 </div>
               </StaggerItem>
             </StaggerContainer>

@@ -86,11 +86,11 @@ export function CookieBanner() {
                     
                     <button
                       onClick={() => setIsVisible(false)}
-                      className="text-white/40 hover:text-white transition-colors p-1"
+                      className="text-white/60 hover:text-white transition-colors p-1"
                       aria-label="Fermer temporairement"
                       data-testid="button-cookie-close"
                     >
-                      <X className="w-5 h-5" />
+                      <X className="w-5 h-5" aria-hidden="true" />
                     </button>
                   </div>
 
@@ -116,7 +116,7 @@ export function CookieBanner() {
                           <label className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/5 rounded-sm cursor-not-allowed">
                             <div>
                               <p className="text-white text-sm font-medium">Cookies nécessaires</p>
-                              <p className="text-white/40 text-xs mt-1">Indispensables au fonctionnement du site</p>
+                              <p className="text-white/60 text-xs mt-1">Indispensables au fonctionnement du site</p>
                             </div>
                             <div className="w-10 h-6 bg-primary/30 rounded-full flex items-center justify-end px-1">
                               <div className="w-4 h-4 bg-primary rounded-full" />
@@ -126,7 +126,7 @@ export function CookieBanner() {
                           <label className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/5 rounded-sm cursor-pointer hover:border-white/10 transition-colors">
                             <div>
                               <p className="text-white text-sm font-medium">Cookies analytiques</p>
-                              <p className="text-white/40 text-xs mt-1">Nous aident à comprendre l'utilisation du site</p>
+                              <p className="text-white/60 text-xs mt-1">Nous aident à comprendre l'utilisation du site</p>
                             </div>
                             <button
                               onClick={() => setPreferences(p => ({ ...p, analytics: !p.analytics }))}
@@ -144,7 +144,7 @@ export function CookieBanner() {
                           <label className="flex items-center justify-between p-4 bg-white/[0.02] border border-white/5 rounded-sm cursor-pointer hover:border-white/10 transition-colors">
                             <div>
                               <p className="text-white text-sm font-medium">Cookies fonctionnels</p>
-                              <p className="text-white/40 text-xs mt-1">Mémorisent vos préférences</p>
+                              <p className="text-white/60 text-xs mt-1">Mémorisent vos préférences</p>
                             </div>
                             <button
                               onClick={() => setPreferences(p => ({ ...p, functional: !p.functional }))}

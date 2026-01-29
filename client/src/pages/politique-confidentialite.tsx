@@ -233,7 +233,7 @@ export default function PolitiqueConfidentialite() {
             </Reveal>
 
             <Reveal delay={1.4}>
-              <p className="text-sm text-white/40 pt-8 border-t border-white/10" data-testid="text-privacy-update">
+              <p className="text-sm text-white/60 pt-8 border-t border-white/10" data-testid="text-privacy-update">
                 Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
               </p>
             </Reveal>

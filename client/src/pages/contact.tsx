@@ -159,7 +159,7 @@ export default function Contact() {
                   <StaggerItem key={i}>
                     <div className="flex items-start gap-6 group" data-testid={`contact-info-${item.label.toLowerCase()}`}>
                       <div className="w-14 h-14 rounded-sm bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
-                        <item.icon className="w-6 h-6 text-white/40 group-hover:text-primary transition-colors" aria-hidden="true" />
+                        <item.icon className="w-6 h-6 text-white/60 group-hover:text-primary transition-colors" aria-hidden="true" />
                       </div>
                       <div>
                         <p className="text-xs text-white/60 uppercase tracking-wider mb-2" data-testid={`text-info-label-${item.label.toLowerCase()}`}>{item.label}</p>

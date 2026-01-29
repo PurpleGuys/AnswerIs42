@@ -245,7 +245,7 @@ export default function PolitiqueCookies() {
             </Reveal>
 
             <Reveal delay={1.1}>
-              <p className="text-sm text-white/40 pt-8 border-t border-white/10" data-testid="text-cookies-update">
+              <p className="text-sm text-white/60 pt-8 border-t border-white/10" data-testid="text-cookies-update">
                 Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
               </p>
             </Reveal>

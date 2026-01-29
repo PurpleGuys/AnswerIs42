@@ -58,7 +58,7 @@ function TimelineStep({ step, index, progress }: { step: typeof STEPS[0]; index:
           whileHover={{ scale: 1.1 }}
         >
           <Icon className={`w-7 h-7 transition-colors duration-500 ${
-            isActive ? "text-primary" : "text-white/40"
+            isActive ? "text-primary" : "text-white/60"
           }`} />
           
           <motion.div
@@ -99,7 +99,7 @@ function TimelineStep({ step, index, progress }: { step: typeof STEPS[0]; index:
         </p>
         
         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full">
-          <span className="text-xs text-white/40">Durée :</span>
+          <span className="text-xs text-white/60">Durée :</span>
           <span className="text-xs text-white/70" data-testid={`text-step-duration-${index}`}>{step.duration}</span>
         </div>
       </div>
