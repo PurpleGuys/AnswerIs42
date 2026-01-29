@@ -8,7 +8,6 @@ import { TrustIndicators } from "@/components/home/TrustIndicators";
 import { WhyUs } from "@/components/home/WhyUs";
 import { Approach } from "@/components/home/Approach";
 import { MethodologyTimeline } from "@/components/home/MethodologyTimeline";
-import { Team } from "@/components/home/Team";
 import { Commitment } from "@/components/home/Commitment";
 import { GrainTexture } from "@/components/ui/GrainTexture";
 import { FloatingShapes } from "@/components/ui/FloatingShapes";
@@ -86,7 +85,6 @@ export default function Home() {
             <WhyUs />
             <Approach />
             <MethodologyTimeline />
-            <Team />
             <Commitment />
           </main>
         </PageTransition>
