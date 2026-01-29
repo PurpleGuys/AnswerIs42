@@ -121,7 +121,7 @@ export default function PolitiqueConfidentialite() {
                 <p className="mb-4">Vos données personnelles peuvent être transmises aux destinataires suivants :</p>
                 <ul className="list-disc list-inside space-y-2">
                   <li><strong className="text-white">Personnel interne :</strong> les membres de l'équipe Answer is 42 habilités</li>
-                  <li><strong className="text-white">Sous-traitants :</strong> hébergeur (Replit), prestataires d'envoi d'emails</li>
+                  <li><strong className="text-white">Sous-traitants :</strong> hébergeur (OVH), prestataires d'envoi d'emails</li>
                   <li><strong className="text-white">Autorités :</strong> sur réquisition judiciaire ou légale uniquement</li>
                 </ul>
                 <p className="mt-4">

@@ -61,9 +61,10 @@ export default function MentionsLegales() {
               <section data-testid="section-hebergeur">
                 <h2 className="text-2xl font-medium text-white mb-4">2. Hébergeur du site</h2>
                 <div className="space-y-2">
-                  <p><strong className="text-white">Raison sociale :</strong> Replit, Inc.</p>
-                  <p><strong className="text-white">Adresse :</strong> 548 Market St #45061, San Francisco, CA 94104, États-Unis</p>
-                  <p><strong className="text-white">Site web :</strong> https://replit.com</p>
+                  <p><strong className="text-white">Raison sociale :</strong> OVH SAS</p>
+                  <p><strong className="text-white">Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France</p>
+                  <p><strong className="text-white">Téléphone :</strong> 1007 (depuis la France)</p>
+                  <p><strong className="text-white">Site web :</strong> https://www.ovhcloud.com</p>
                 </div>
               </section>
             </Reveal>
