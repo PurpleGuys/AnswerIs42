@@ -20,3 +20,7 @@ module.exports = {
     time: true
   }]
 };
+
+// Les variables sensibles (SMTP, DATABASE_URL) doivent être dans un fichier .env
+// Copiez .env.example en .env et configurez vos valeurs
+// Le serveur charge automatiquement le fichier .env au démarrage

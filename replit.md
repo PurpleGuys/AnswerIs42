@@ -129,11 +129,12 @@ Preferred communication style: Simple, everyday language.
 
 ### Deployment Process
 1. Build locally: `npm run build`
-2. Upload files via SFTP or rsync
+2. Upload files via SFTP or rsync (inclure `.env.example`)
 3. Install dependencies: `npm ci --only=production`
-4. Start with PM2: `pm2 start ecosystem.config.cjs`
+4. Copier `.env.example` en `.env` et configurer les valeurs
+5. Start with PM2: `pm2 start ecosystem.config.cjs`
 
-### Environment Variables
+### Environment Variables (chargées via dotenv)
 - `DATABASE_URL`: PostgreSQL connection string
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`: Email configuration
 - `SMTP_FROM`, `CONTACT_EMAIL`: Contact form settings
