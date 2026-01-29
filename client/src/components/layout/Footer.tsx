@@ -134,7 +134,7 @@ export function Footer() {
             © {new Date().getFullYear()} Answer is 42. Tous droits réservés.
           </p>
           <p className="text-white/20 text-sm">
-            Consulting IT Premium
+            Consulting IT
           </p>
         </div>
       </div>

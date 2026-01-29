@@ -82,7 +82,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact | Answer is 42 - Consulting IT Premium</title>
+        <title>Contact | Answer is 42 - Consulting IT</title>
         <meta name="description" content="Contactez Answer is 42 pour discuter de vos projets IT. Expertise en gestion de projet, développement Python, SQL, C# et transformation digitale. Réponse sous 48h." />
         <meta name="keywords" content="contact consulting IT, devis projet IT, expert Python SQL, consultant IT Paris" />
         <link rel="canonical" href="https://answeris42.fr/contact" />

@@ -197,7 +197,7 @@ export default function Approche() {
   return (
     <>
       <Helmet>
-        <title>Notre Approche | Méthodologie Agile & Consulting IT Premium | Answer is 42</title>
+        <title>Notre Approche | Méthodologie Agile & Consulting IT | Answer is 42</title>
         <meta name="description" content="Découvrez notre méthodologie de consulting IT : diagnostic approfondi, stratégie sur mesure, implémentation agile et accompagnement au changement. Transparence et résultats garantis." />
         <meta name="keywords" content="méthodologie agile, consulting IT, gestion de projet, accompagnement digital, transformation numérique, Paris" />
         <link rel="canonical" href="https://answeris42.fr/approche" />
@@ -209,7 +209,7 @@ export default function Approche() {
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Notre Approche | Answer is 42" />
-        <meta name="twitter:description" content="Consulting IT premium : méthodologie agile, transparence et résultats." />
+        <meta name="twitter:description" content="Consulting IT : méthodologie agile, transparence et résultats." />
         
         <script type="application/ld+json">
           {JSON.stringify({

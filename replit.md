@@ -2,7 +2,7 @@
 
 ## Overview
 
-A premium IT consulting website for "Answer is 42", a boutique firm specializing in project management, governance, and IT delivery. The site features a luxury dark-themed design with violet accents (#7C3AED), built as a full-stack application with React frontend and Express backend.
+An IT consulting website for "Answer is 42", a boutique firm specializing in project management, governance, and IT delivery. The site features a luxury dark-themed design with violet accents (#7C3AED), built as a full-stack application with React frontend and Express backend.
 
 ## Recent Changes (January 2026)
 
@@ -10,16 +10,16 @@ A premium IT consulting website for "Answer is 42", a boutique firm specializing
 - **Approche Page**: Methodology timeline with 4 phases and values section
 - **SEO Complete**: All pages have Helmet meta tags (title, description, OG, Twitter Cards, canonical)
 - **Legal Pages**: French RGPD compliance (Mentions légales, Confidentialité, CGU, Cookies) with noindex
-- **Premium UX**: Cookie consent banner, custom violet cursor, parallax effects, scroll animations
+- **UX Enhancements**: Cookie consent banner, custom violet cursor, parallax effects, scroll animations
 - **Production Ready**: robots.txt, sitemap.xml with all 8 pages, structured data JSON-LD
-- **Visual Enhancements**: Floating shapes, tech grid, particles, glow cards, spotlight effect, premium typography
+- **Visual Enhancements**: Floating shapes, tech grid, particles, glow cards, spotlight effect, refined typography
 
-## Premium Visual Components
+## Visual Components
 
 ### Background Effects
 - **FloatingShapes**: Animated geometric shapes (circles, squares, triangles) floating in background
 - **TechGrid**: Subtle grid pattern with violet accent lines
-- **GrainTexture**: Film grain overlay for premium feel
+- **GrainTexture**: Film grain overlay for refined feel
 - **ParticleConstellation**: Animated particle effect in hero section
 
 ### Interactive Effects
@@ -29,7 +29,7 @@ A premium IT consulting website for "Answer is 42", a boutique firm specializing
 
 ### Typography & Spacing
 - **Gradient titles**: Key text with violet gradient (from-primary via-purple-400 to-primary)
-- **Premium sizing**: Titles at 6xl-8xl scale, generous padding (py-40, gap-20)
+- **Large sizing**: Titles at 6xl-8xl scale, generous padding (py-40, gap-20)
 - **PageTransition**: Smooth fade-in animations between page navigations
 
 ## User Preferences

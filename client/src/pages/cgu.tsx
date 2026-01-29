@@ -9,7 +9,7 @@ export default function CGU() {
     <>
       <Helmet>
         <title>Conditions Générales d'Utilisation | Answer is 42</title>
-        <meta name="description" content="Conditions générales d'utilisation du site Answer is 42 - Cabinet de consulting IT premium." />
+        <meta name="description" content="Conditions générales d'utilisation du site Answer is 42 - Cabinet de consulting IT." />
         <link rel="canonical" href="https://answeris42.fr/cgu" />
         <meta name="robots" content="noindex, follow" />
         <meta property="og:title" content="CGU | Answer is 42" />

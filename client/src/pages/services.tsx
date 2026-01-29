@@ -228,19 +228,19 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Services IT Premium | Consulting SQL, Python, C#, Cloud | Answer is 42</title>
-        <meta name="description" content="Expertise en développement Python, C#/.NET, SQL, automatisation RPA, Cloud DevOps, Business Intelligence et gestion de projet IT. Consulting IT premium à Paris." />
+        <title>Services IT | Consulting SQL, Python, C#, Cloud | Answer is 42</title>
+        <meta name="description" content="Expertise en développement Python, C#/.NET, SQL, automatisation RPA, Cloud DevOps, Business Intelligence et gestion de projet IT. Consulting IT à Paris." />
         <meta name="keywords" content="consulting IT, développement Python, C# .NET, SQL, PostgreSQL, automatisation, RPA, Cloud AWS Azure, DevOps, Business Intelligence, gestion projet IT, Paris" />
         <link rel="canonical" href="https://answeris42.fr/services" />
         
-        <meta property="og:title" content="Services IT Premium | Answer is 42" />
+        <meta property="og:title" content="Services IT | Answer is 42" />
         <meta property="og:description" content="Expertise en développement Python, C#/.NET, SQL, automatisation, Cloud et gestion de projet IT." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://answeris42.fr/services" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Services IT Premium | Answer is 42" />
-        <meta name="twitter:description" content="Consulting IT premium : Python, C#, SQL, Cloud, DevOps, BI et plus." />
+        <meta name="twitter:title" content="Services IT | Answer is 42" />
+        <meta name="twitter:description" content="Consulting IT : Python, C#, SQL, Cloud, DevOps, BI et plus." />
         
         <script type="application/ld+json">
           {JSON.stringify({

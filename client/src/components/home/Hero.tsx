@@ -55,7 +55,7 @@ export function Hero() {
       >
         <Reveal delay={0.1}>
           <p className="text-primary/80 text-sm font-medium tracking-[0.3em] uppercase mb-8" data-testid="text-hero-subtitle">
-            Consulting IT Premium
+            Consulting IT
           </p>
         </Reveal>
         

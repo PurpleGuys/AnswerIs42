@@ -19,34 +19,59 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Answer is 42 | Consulting IT Premium - Gestion de Projet, SQL, Python, Cloud</title>
-        <meta name="description" content="Cabinet de consulting IT premium spécialisé en gestion de projet, gouvernance IT, développement Python, SQL, C#/.NET et Cloud. Expertise en transformation digitale à Paris et en France." />
-        <meta name="keywords" content="consulting IT, gestion de projet IT, Python, SQL, C#, .NET, Cloud, DevOps, transformation digitale, Paris, France" />
+        <title>
+          Answer is 42 | Consulting IT - Gestion de Projet, SQL, Python,
+          Cloud
+        </title>
+        <meta
+          name="description"
+          content="Cabinet de consulting IT spécialisé en gestion de projet, gouvernance IT, développement Python, SQL, C#/.NET et Cloud. Expertise en transformation digitale à Paris et en France."
+        />
+        <meta
+          name="keywords"
+          content="consulting IT, gestion de projet IT, Python, SQL, C#, .NET, Cloud, DevOps, transformation digitale, Paris, France"
+        />
         <link rel="canonical" href="https://answeris42.fr" />
-        
-        <meta property="og:title" content="Answer is 42 | Consulting IT Premium" />
-        <meta property="og:description" content="Cabinet de consulting IT spécialisé en gestion de projet, développement et transformation digitale." />
+
+        <meta property="og:title" content="Answer is 42 | Consulting IT" />
+        <meta
+          property="og:description"
+          content="Cabinet de consulting IT spécialisé en gestion de projet, développement et transformation digitale."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://answeris42.fr" />
         <meta property="og:site_name" content="Answer is 42" />
-        
+
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Answer is 42 | Consulting IT Premium" />
-        <meta name="twitter:description" content="Cabinet de consulting IT premium : Python, SQL, C#, Cloud et gestion de projet." />
-        
+        <meta name="twitter:title" content="Answer is 42 | Consulting IT" />
+        <meta
+          name="twitter:description"
+          content="Cabinet de consulting IT : Python, SQL, C#, Cloud et gestion de projet."
+        />
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Answer is 42",
-            "url": "https://answeris42.fr",
-            "description": "Cabinet de consulting IT premium spécialisé en gestion de projet et transformation digitale",
-            "areaServed": "France",
-            "knowsAbout": ["IT Consulting", "Project Management", "Python", "SQL", "C#", ".NET", "Cloud Computing", "DevOps"]
+            name: "Answer is 42",
+            url: "https://answeris42.fr",
+            description:
+              "Cabinet de consulting IT spécialisé en gestion de projet et transformation digitale",
+            areaServed: "France",
+            knowsAbout: [
+              "IT Consulting",
+              "Project Management",
+              "Python",
+              "SQL",
+              "C#",
+              ".NET",
+              "Cloud Computing",
+              "DevOps",
+            ],
           })}
         </script>
       </Helmet>
-      
+
       <div className="min-h-screen bg-background">
         <TechGrid />
         <FloatingShapes />

@@ -9,7 +9,7 @@ export default function PolitiqueCookies() {
     <>
       <Helmet>
         <title>Politique des Cookies | Answer is 42</title>
-        <meta name="description" content="Politique des cookies et gestion de vos préférences - Answer is 42, consulting IT premium." />
+        <meta name="description" content="Politique des cookies et gestion de vos préférences - Answer is 42, consulting IT." />
         <link rel="canonical" href="https://answeris42.fr/politique-cookies" />
         <meta name="robots" content="noindex, follow" />
         <meta property="og:title" content="Politique des Cookies | Answer is 42" />
