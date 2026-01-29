@@ -6,13 +6,15 @@ An IT consulting website for "Answer is 42", a boutique firm specializing in pro
 
 ## Recent Changes (January 2026)
 
+- **SEO Enhanced**: LocalBusiness schema with address/geo/areaServed/openingHours, BreadcrumbList schema markup on all main pages
+- **Breadcrumbs Component**: Visual navigation + structured data on Services, Approche, Contact pages
+- **Performance Optimizations**: Code splitting with React.lazy for all pages except Home, font preloading (Inter), dns-prefetch
+- **Mobile Performance**: useReducedAnimations hook disables heavy animations on mobile/low-end devices/reduced-motion preference
 - **Services Page**: Dedicated page with 8 service cards (SQL, Python, C#, Automation, Cloud, Security, BI, Project Management)
 - **Approche Page**: Methodology timeline with 4 phases and values section
-- **SEO Complete**: All pages have Helmet meta tags (title, description, OG, Twitter Cards, canonical)
 - **Legal Pages**: French RGPD compliance (Mentions légales, Confidentialité, CGU, Cookies) with noindex
 - **UX Enhancements**: Cookie consent banner, custom violet cursor, parallax effects, scroll animations
 - **Production Ready**: robots.txt, sitemap.xml with all 8 pages, structured data JSON-LD
-- **Visual Enhancements**: Floating shapes, tech grid, particles, glow cards, spotlight effect, refined typography
 
 ## Visual Components
 
@@ -100,8 +102,16 @@ Preferred communication style: Simple, everyday language.
 - **Domain**: answeris42.fr
 - **Sitemap**: /sitemap.xml with all 8 pages
 - **Robots**: /robots.txt allowing all crawlers
-- **Structured Data**: JSON-LD for Organization, Service, HowTo, ContactPage schemas
+- **Structured Data**: JSON-LD for Organization, LocalBusiness (with geo/address/hours), Service, HowTo, ContactPage, BreadcrumbList schemas
+- **Breadcrumbs**: Visual component with schema markup on Services, Approche, Contact pages
 - **Legal pages**: noindex, follow (excluded from search but links followed)
+
+## Performance Optimizations
+
+- **Code Splitting**: React.lazy() for all pages except Home, with Suspense fallback loader
+- **Font Loading**: Preload Inter font, dns-prefetch for Google Fonts CDN
+- **Reduced Animations**: useReducedAnimations hook checks mobile/low-end/prefers-reduced-motion
+- **Component Optimization**: FloatingShapes and ParticleConstellation render static fallbacks on mobile
 
 ## Hetzner Webhosting Deployment
 
